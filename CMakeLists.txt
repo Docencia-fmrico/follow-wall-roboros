@@ -22,18 +22,21 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+
 
 set(dependencies 
   rclcpp
   std_msgs
+  sensor_msgs
 )
 
-#add_executable(simple_node src/simple_node.cpp)
-#ament_target_dependencies(simple_node ${dependencies})
+add_executable(calculate_direction src/calculate_direction.cpp)
+ament_target_dependencies(calculate_direction ${dependencies})
 
 
 install(TARGETS
-  #simple_node 
+  calculate_direction 
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION lib/${PROJECT_NAME}
@@ -57,3 +60,5 @@ if(BUILD_TESTING)
 endif()
 
 ament_package()
+
+
