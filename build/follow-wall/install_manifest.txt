@@ -1,0 +1,17 @@
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/lib/follow-wall/calculate_direction
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/ament_index/resource_index/package_run_dependencies/follow-wall
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/ament_index/resource_index/parent_prefix_path/follow-wall
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/environment/ament_prefix_path.sh
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/environment/ament_prefix_path.dsv
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/environment/path.sh
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/environment/path.dsv
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/local_setup.bash
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/local_setup.sh
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/local_setup.zsh
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/local_setup.dsv
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/package.dsv
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/ament_index/resource_index/packages/follow-wall
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/cmake/ament_cmake_export_dependencies-extras.cmake
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/cmake/follow-wallConfig.cmake
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/cmake/follow-wallConfig-version.cmake
+/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/package.xml
