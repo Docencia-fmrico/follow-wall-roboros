@@ -1,0 +1,62 @@
+[0.071s] Invoking command in '/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/build/follow-wall': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/alumnos/alejo/colcon_ws/install/ros2controlcli:/home/alumnos/alejo/colcon_ws/install/launch_pal:/home/alumnos/alejo/colcon_ws/install/intro_py_ros2:/opt/ros/foxy /usr/bin/cmake /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros -DCMAKE_INSTALL_PREFIX=/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall
+[0.282s] -- The C compiler identification is GNU 9.3.0
+[0.415s] -- The CXX compiler identification is GNU 9.3.0
+[0.438s] -- Check for working C compiler: /usr/bin/cc
+[0.703s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.706s] -- Detecting C compiler ABI info
+[0.952s] -- Detecting C compiler ABI info - done
+[0.976s] -- Detecting C compile features
+[0.977s] -- Detecting C compile features - done
+[0.993s] -- Check for working CXX compiler: /usr/bin/c++
+[1.225s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[1.227s] -- Detecting CXX compiler ABI info
+[1.493s] -- Detecting CXX compiler ABI info - done
+[1.519s] -- Detecting CXX compile features
+[1.519s] -- Detecting CXX compile features - done
+[1.697s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[2.050s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[2.050s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[4.588s] -- Found rclcpp: 2.4.0 (/opt/ros/foxy/share/rclcpp/cmake)
+[6.323s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[6.815s] -- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[7.931s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[8.131s] -- Found FastRTPS: /opt/ros/foxy/include  
+[9.364s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[10.503s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[10.508s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[10.521s] -- Looking for pthread.h
+[10.747s] -- Looking for pthread.h - found
+[10.751s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[11.008s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[11.014s] -- Looking for pthread_create in pthreads
+[11.222s] -- Looking for pthread_create in pthreads - not found
+[11.223s] -- Looking for pthread_create in pthread
+[11.479s] -- Looking for pthread_create in pthread - found
+[11.487s] -- Found Threads: TRUE  
+[13.016s] -- Found sensor_msgs: 2.0.4 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[13.509s] -- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[15.145s] -- Added test 'copyright' to check source files copyright and LICENSE
+[15.379s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[15.379s] -- Configured cppcheck include dirs: 
+[15.379s] -- Configured cppcheck exclude dirs and/or files: 
+[15.586s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[15.586s] -- Configured cpplint exclude dirs and/or files: 
+[15.666s] -- Added test 'lint_cmake' to check CMake code style
+[15.897s] -- Added test 'uncrustify' to check C / C++ code style
+[15.897s] -- Configured uncrustify additional arguments: 
+[15.928s] -- Added test 'xmllint' to check XML markup files
+[15.985s] -- Configuring done
+[16.207s] -- Generating done
+[16.255s] -- Build files have been written to: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/build/follow-wall
+[16.269s] Invoked command in '/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/build/follow-wall' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/alumnos/alejo/colcon_ws/install/ros2controlcli:/home/alumnos/alejo/colcon_ws/install/launch_pal:/home/alumnos/alejo/colcon_ws/install/intro_py_ros2:/opt/ros/foxy /usr/bin/cmake /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros -DCMAKE_INSTALL_PREFIX=/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall
+[16.273s] Invoking command in '/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/build/follow-wall': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/alumnos/alejo/colcon_ws/install/ros2controlcli:/home/alumnos/alejo/colcon_ws/install/launch_pal:/home/alumnos/alejo/colcon_ws/install/intro_py_ros2:/opt/ros/foxy /usr/bin/cmake --build /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/build/follow-wall -- -j6 -l6
+[16.369s] [35m[1mScanning dependencies of target calculate_direction[0m
+[16.517s] [ 50%] [32mBuilding CXX object CMakeFiles/calculate_direction.dir/src/calculate_direction.cpp.o[0m
+[16.717s] [01m[K/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/src/calculate_direction.cpp:2:10:[m[K [01;31m[Kfatal error: [m[Ksensor_msgs/msg/laserscan.hpp: No such file or directory
+[16.718s]     2 | #include [01;31m[K"sensor_msgs/msg/laserscan.hpp"[m[K
+[16.718s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[16.718s] compilation terminated.
+[16.718s] make[2]: *** [CMakeFiles/calculate_direction.dir/build.make:63: CMakeFiles/calculate_direction.dir/src/calculate_direction.cpp.o] Error 1
+[16.719s] make[1]: *** [CMakeFiles/Makefile2:78: CMakeFiles/calculate_direction.dir/all] Error 2
+[16.719s] make: *** [Makefile:141: all] Error 2
+[16.720s] Invoked command in '/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/build/follow-wall' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/alumnos/alejo/colcon_ws/install/ros2controlcli:/home/alumnos/alejo/colcon_ws/install/launch_pal:/home/alumnos/alejo/colcon_ws/install/intro_py_ros2:/opt/ros/foxy /usr/bin/cmake --build /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/build/follow-wall -- -j6 -l6

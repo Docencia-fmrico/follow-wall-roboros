@@ -26,9 +26,9 @@ find_package(sensor_msgs REQUIRED)
 
 
 set(dependencies 
-  rclcpp
-  std_msgs
-  sensor_msgs
+  "rclcpp"
+  "std_msgs"
+  "sensor_msgs"
 )
 
 add_executable(calculate_direction src/calculate_direction.cpp)
@@ -58,6 +58,7 @@ if(BUILD_TESTING)
   #set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
+ament_export_dependencies(${dependencies})
 
 ament_package()
 

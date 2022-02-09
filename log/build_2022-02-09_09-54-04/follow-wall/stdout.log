@@ -1,0 +1,23 @@
+[35m[1mScanning dependencies of target calculate_direction[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/calculate_direction.dir/src/calculate_direction.cpp.o[0m
+[100%] [32m[1mLinking CXX executable calculate_direction[0m
+[100%] Built target calculate_direction
+-- Install configuration: ""
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/lib/follow-wall/calculate_direction
+-- Set runtime path of "/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/lib/follow-wall/calculate_direction" to ""
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/ament_index/resource_index/package_run_dependencies/follow-wall
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/ament_index/resource_index/parent_prefix_path/follow-wall
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/environment/ament_prefix_path.sh
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/environment/ament_prefix_path.dsv
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/environment/path.sh
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/environment/path.dsv
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/local_setup.bash
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/local_setup.sh
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/local_setup.zsh
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/local_setup.dsv
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/package.dsv
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/ament_index/resource_index/packages/follow-wall
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/cmake/follow-wallConfig.cmake
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/cmake/follow-wallConfig-version.cmake
+-- Installing: /home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/install/follow-wall/share/follow-wall/package.xml
