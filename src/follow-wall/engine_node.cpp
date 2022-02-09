@@ -17,6 +17,10 @@
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
 
+enum{
+  LASERPARTITION=3;
+}
+
 using namespace std::chrono_literals;
 
 class EngineNode : public rclcpp::Node
@@ -76,17 +80,38 @@ private:
     float32[] intensities        # intensity data [device-specific units].  If your
                                 # device does not provide intensities, please leave
                                 # the array empty.*/
-    int average_side_values[5][]:
 
-    int areasize=(msg.angle_min-msg.angle_max)/5;
-    int iterations_per_size=areasize/msg.angle_increment;
-    for(int i=0;i<5,i++){
+    RCLCPP_INFO("I heard: [%d]",msg);
+
+    int average_side_values[LASERPARTITION][2]:
+
+    int areasize=(msg.angle_min-msg.angle_max)/LASERPARTITION;
+    int iterations_per_size=areasize\msg.angle_increment;
+
+    int semicircle_half=(msg.range_max-range_min)/2;
+
+    for(int i=0;i<LASERPARTITION,i++){
+
       int first_zone_range=iterations_per_size*i;
-      int average;
+      int averageF,averageN,counterF,counterN = 0;
+
       for(int a=0;a<iterations_per_size;a++){
-        average+=range[first_zone_range+a];
+        //dsicard out of range values
+        if(range[first_zone_range+a]>=msg.range_min && range[first_zone_range+a]<=msg.range_max){
+
+          if(range[first_zone_range+a]>semicircle_half){
+            //far aside part
+            averageF+=averageF+range[first_zone_range+a];
+            counterF++;
+          }else{
+            //near part
+            averageN+=averageN+range[first_zone_range+a];
+            counterN++;
+          }
+        }
       }
-      average_side_values[i]=average/5;
+      average_side_values[i][0]=averageF/counterF;
+      average_side_values[i][1]=averageN/counterN;
 
     }
                               
