@@ -17,9 +17,12 @@
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
 
+#include "geometry_msgs/msg/Twist"
+#include "geometry_msgs/msg/laser_scan"
+
 enum{
-  LASERPARTITION=3;
-}
+  LASERPARTITION=3
+};
 
 using namespace std::chrono_literals;
 
