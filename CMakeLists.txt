@@ -42,7 +42,6 @@ ament_target_dependencies(engine_node ${dependencies})
 add_executable(calculate_direction src/calculate_direction.cpp)
 ament_target_dependencies(calculate_direction ${dependencies})
 
-<<<<<<< HEAD
 add_executable(engine_node src/follow-wall/engine_node.cpp)
 ament_target_dependencies(engine_node ${dependencies})
 
