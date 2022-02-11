@@ -24,6 +24,7 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(rclcpp_lifecycle REQUIRED)
 
 
 set(dependencies 
@@ -31,14 +32,19 @@ set(dependencies
   "std_msgs"
   "sensor_msgs"
   "geometry_msgs"
+  rclcpp_lifecycle
 )
 
 add_executable(calculate_direction src/calculate_direction.cpp)
 ament_target_dependencies(calculate_direction ${dependencies})
 
+add_executable(lifecycle_node src/lifecycle_node.cpp)
+ament_target_dependencies(lifecycle_node ${dependencies})
+
 
 install(TARGETS
   calculate_direction 
+  lifecycle_node
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION lib/${PROJECT_NAME}
