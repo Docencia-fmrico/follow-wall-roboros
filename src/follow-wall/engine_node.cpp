@@ -26,6 +26,11 @@ enum{
 
 using namespace std::chrono_literals;
 
+
+int rad2degr(float rad){
+    return float*(180/3.1416);
+}
+
 class EngineNode : public rclcpp::Node
 {
 public:
@@ -86,12 +91,12 @@ private:
 
     RCLCPP_INFO("I heard: [%d]",msg);
 
-    int average_side_values[LASERPARTITION][2]:
+    float average_side_values[LASERPARTITION][2]:
 
-    int areasize=(msg.angle_min-msg.angle_max)/LASERPARTITION;
-    int iterations_per_size=areasize\msg.angle_increment;
+    int areasize=(rad2degr(msg.angle_min)-rad2degr(msg.angle_max))/LASERPARTITION;
+    int iterations_per_size=areasize\rad2degr(msg.angle_increment);
 
-    int semicircle_half=(msg.range_max-range_min)/2;
+    float semicircle_half=(msg.range_max-msg.range_min)/2;
 
     for(int i=0;i<LASERPARTITION,i++){
 
@@ -118,8 +123,6 @@ private:
 
     }
                               
-
-    RCLCPP_INFO("I heard: [%d]",msg);
   }
 
 };
