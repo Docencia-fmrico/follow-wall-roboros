@@ -44,7 +44,7 @@ public:
   EngineNode()
   : Node("engine_node")
   {
-    pub_ = create_publisher<geometry_msgs::msg::Twist>("imcmd_vel", 10);
+    pub_ = create_publisher<geometry_msgs::msg::Twist>("/mobile_base_controller/cmd_vel_unstamped", 10);
     //sub_ = create_subscription<std_msgs::msg::Int32>(
       //"laser_info", 10, std::bind(&EngineNode::callback, this, _1));
     //lasersub_ = create_subscription<sensor_msgs::msg::LaserScan>(
