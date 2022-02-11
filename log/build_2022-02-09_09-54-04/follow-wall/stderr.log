@@ -1,5 +1,0 @@
-[01m[K/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/src/calculate_direction.cpp:[m[K In function ‘[01m[Kvoid callback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
-[01m[K/home/alumnos/alejo/colcon_ws/src/follow-wall-roboros/src/calculate_direction.cpp:6:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K-Wunused-parameter[m[K]
-    6 | [01;35m[KaserScan::SharedPtr msg[m[K)
-      | [01;35m[K~~~~~~~~~~~~~~~~~~~~^~~[m[K
-
