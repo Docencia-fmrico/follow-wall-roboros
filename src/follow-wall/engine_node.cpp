@@ -17,8 +17,8 @@
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
 
-#include "geometry_msgs/msg/twist"
-#include "geometry_msgs/msg/laser_scan"
+#include "geometry_msgs/msg/twist.hpp"
+#include "sensor_msgs/msg/laser_scan.hpp"
 
 enum{
   LASERPARTITION=3
@@ -91,7 +91,7 @@ private:
 
     RCLCPP_INFO("I heard: [%d]",msg);
 
-    float average_side_values[LASERPARTITION][2]:
+    float average_side_values[LASERPARTITION][2];
 
     int areasize=(rad2degr(msg.angle_min)-rad2degr(msg.angle_max))/LASERPARTITION;
     int iterations_per_size=areasize\rad2degr(msg.angle_increment);
