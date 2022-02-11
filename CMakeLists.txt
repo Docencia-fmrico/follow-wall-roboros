@@ -18,8 +18,6 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-
-
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
@@ -36,6 +34,11 @@ set(dependencies
   rclcpp_lifecycle
 )
 
+
+
+add_executable(engine_node src/follow-wall/engine_node.cpp)
+ament_target_dependencies(engine_node ${dependencies})
+
 add_executable(calculate_direction src/calculate_direction.cpp)
 ament_target_dependencies(calculate_direction ${dependencies})
 
@@ -50,6 +53,7 @@ install(TARGETS
   calculate_direction 
   engine_node
   lifecycle_node
+
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION lib/${PROJECT_NAME}
