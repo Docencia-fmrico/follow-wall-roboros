@@ -16,13 +16,14 @@
 
 #include "gtest/gtest.h"
 
+#include "test_unitarios_nodo.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
 
 
 
-TEST(test_node, test_get_msg){
-
+TEST(node_test, test_ret_1){
+  ASSERT_EQ(1, ret_1());
 }
 
 

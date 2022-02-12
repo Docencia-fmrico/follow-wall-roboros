@@ -40,6 +40,7 @@ private:
 
 }  // namespace test_ci
 
+int ret_1();
 #endif  // TEST_CI__TESTNODE_HPP_
 
 

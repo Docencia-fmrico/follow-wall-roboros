@@ -12,12 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
- #include <string>
+#include <string>
 
-#include "test_ci/TestNode.hpp"
+#include "test_unitarios_nodo.hpp"
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
+
 
 namespace test_ci
 {
@@ -44,4 +45,12 @@ TestNode::string_callback(const std_msgs::msg::String::ConstSharedPtr msg)
 }
 
 
+
 }  // namespace test_ci
+
+int
+ret_1()
+{
+  return 1;
+}
+
