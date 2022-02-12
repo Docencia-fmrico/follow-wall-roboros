@@ -34,7 +34,10 @@ set(dependencies
   rclcpp_lifecycle
 )
 
+include_directories(include)
 
+add_library(test_unitarios_nodo SHARED src/follow-wall/test_unitarios_nodo.cpp)
+ament_target_dependencies(test_unitarios_nodo ${dependencies})
 
 #add_executable(engine_node src/follow-wall/engine_node.cpp)
 #ament_target_dependencies(engine_node ${dependencies})
@@ -47,6 +50,7 @@ ament_target_dependencies(lifecycle_node ${dependencies})
 
 
 install(TARGETS
+  test_unitarios_nodo
   calculate_direction 
   #engine_node
   lifecycle_node
@@ -71,6 +75,8 @@ if(BUILD_TESTING)
   # uncomment the line when this package is not in a git repo
   #set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
+  find_package(ament_cmake_gtest REQUIRED)
+  add_subdirectory(test)
 endif()
 ament_export_dependencies(${dependencies})
 
