@@ -3,7 +3,6 @@ project(follow-wall)
 
 set(CMAKE_CXX_STANDARD 17)
 
-
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
   set(CMAKE_C_STANDARD 99)
@@ -36,24 +35,11 @@ set(dependencies
 
 include_directories(include)
 
-add_library(test_unitarios_nodo SHARED src/follow-wall/test_unitarios_nodo.cpp)
-ament_target_dependencies(test_unitarios_nodo ${dependencies})
-
-#add_executable(engine_node src/follow-wall/engine_node.cpp)
-#ament_target_dependencies(engine_node ${dependencies})
-
-add_executable(calculate_direction src/calculate_direction.cpp)
-ament_target_dependencies(calculate_direction ${dependencies})
-
-add_executable(lifecycle_node src/lifecycle_node.cpp)
-ament_target_dependencies(lifecycle_node ${dependencies})
-
+add_library(${PROJECT_NAME} SHARED src/${PROJECT_NAME}/tests_unitarios_nodo.cpp)
+ament_target_dependencies(${PROJECT_NAME} ${dependencies})
 
 install(TARGETS
-  test_unitarios_nodo
-  calculate_direction 
-  #engine_node
-  lifecycle_node
+  ${PROJECT_NAME} 
 
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib

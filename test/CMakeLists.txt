@@ -1,2 +1,2 @@
-ament_add_gtest(node_test test_unitarios.cpp)
-target_link_libraries(node_test test_unitarios_nodo)
+ament_add_gtest(node_test tests_unitarios.cpp)
+target_link_libraries(node_test ${PROJECT_NAME})

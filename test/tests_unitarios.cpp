@@ -16,7 +16,7 @@
 
 #include "gtest/gtest.h"
 
-#include "test_unitarios_nodo.hpp"
+#include "follow-wall/tests_unitarios_nodo.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
 
