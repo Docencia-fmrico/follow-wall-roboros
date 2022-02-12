@@ -91,35 +91,45 @@ private:
 
     RCLCPP_INFO("I heard: [%d]",msg);
 
-    float average_side_values[LASERPARTITION][2]:
+    float average_side_values[LASERPARTITION][2];
 
-    int areasize=(rad2degr(msg.angle_min)-rad2degr(msg.angle_max))/LASERPARTITION;
-    int iterations_per_size=areasize\rad2degr(msg.angle_increment);
+    int areasize=(rad2degr(msg.angle_max)-rad2degr(msg.angle_min))/LASERPARTITION;
+
+    int iterations_per_size=sizeof(msg.ranges)/sizeof(msg.ranges[0])/LASERPARTITION;
 
     float semicircle_half=(msg.range_max-msg.range_min)/2;
 
-    for(int i=0;i<LASERPARTITION,i++){
+    std::cout<<"angle_max:"<<rad2degr(msg.angle_max)<<"\n";
+    std::cout<<"areasize:"<<areasize<<"\n";
+    std::cout<<"iterations_per_size:"<<iterations_per_size<<"\n";
+    std::cout<<"semicircle_half:"<<semicircle_half<<"\n";
 
+    for(int i=0;i<LASERPARTITION;i++){
+
+      //intial pointer
       int first_zone_range=iterations_per_size*i;
-      int averageF,averageN,counterF,counterN = 0;
+
+      float averageF,averageN=0.0;
+      int counterF=0;
+      int counterN = 0;
 
       for(int a=0;a<iterations_per_size;a++){
         //dsicard out of range values
-        if(range[first_zone_range+a]>=msg.range_min && range[first_zone_range+a]<=msg.range_max){
+        if(msg.ranges[first_zone_range+a]>=msg.range_min && msg.ranges[first_zone_range+a]<=msg.range_max){
+          std::cout<<"-------------"<<"\n";
+          std::cout<<msg.ranges[first_zone_range+a]<<"\n";
 
-          if(range[first_zone_range+a]>semicircle_half){
+          if(msg.ranges[first_zone_range+a]>semicircle_half){
             //far aside part
-            averageF+=averageF+range[first_zone_range+a];
             counterF++;
           }else{
             //near part
-            averageN+=averageN+range[first_zone_range+a];
             counterN++;
           }
         }
       }
-      average_side_values[i][0]=averageF/counterF;
-      average_side_values[i][1]=averageN/counterN;
+      average_side_values[i][0]=counterF;
+      average_side_values[i][1]=counterN;
 
     }
                               
