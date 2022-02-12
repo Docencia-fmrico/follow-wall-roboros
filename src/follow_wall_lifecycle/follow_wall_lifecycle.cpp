@@ -33,7 +33,7 @@ enum actions decide_action(struct laserscan_result laser){
   return MOVING_TURN_RIGHT;
 }
 
-LCNcalc_dir::LCNcalc_dir() : rclcpp_lifecycle::LifecycleNode("lifecycle_node_example"){
+LCNcalc_dir::LCNcalc_dir() : rclcpp_lifecycle::LifecycleNode("follow_wall_node"){
     pub_ = create_publisher<std_msgs::msg::Float64>("configured_speed", 100);
     twist_pub_ = create_publisher<geometry_msgs::msg::Twist>("/mobile_base_controller/cmd_vel_unstamped", 10);
     RCLCPP_INFO(get_logger(), "Creating LFC!!!");
