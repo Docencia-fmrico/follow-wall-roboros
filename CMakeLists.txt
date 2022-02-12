@@ -42,7 +42,7 @@ set(dependencies
 add_executable(calculate_direction src/calculate_direction.cpp)
 ament_target_dependencies(calculate_direction ${dependencies})
 
-add_executable(lifecycle_node src/lifecycle_node.cpp)
+add_executable(lifecycle_node src/lifecycle_node/lifecycle_node.cpp)
 ament_target_dependencies(lifecycle_node ${dependencies})
 
 

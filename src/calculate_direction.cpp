@@ -1,3 +1,18 @@
+// RoboRos group
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+// "Copyright [2021] <RoboRos>"
+
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/laser_scan.hpp"
 #include "geometry_msgs/msg/twist.hpp"
@@ -5,7 +20,6 @@
 using namespace std::chrono_literals;
 
 rclcpp::Node::SharedPtr node = nullptr;
-
 
 enum actions{
   TURN_RIGHT,
@@ -17,12 +31,12 @@ enum actions{
 };
 
 enum sectors{
-  RIGHT_NEAR=0,
-  FRONT_NEAR=1,
-  LEFT_NEAR=2,
-  RIGHT_FAR=3,
-  FRONT_FAR=4,
-  LEFT_FAR=5
+  RIGHT_NEAR,
+  FRONT_NEAR,
+  LEFT_NEAR,
+  RIGHT_FAR,
+  FRONT_FAR,
+  LEFT_FAR
 };
 
 struct laserscan_result{
