@@ -97,7 +97,7 @@ void LCNcalc_dir::do_work()
     }
 }
 
-void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg) const
+void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
 {
   /*std_msgs/Header header # timestamp in the header is the acquisition time of
                            # the first ray in the scan.
