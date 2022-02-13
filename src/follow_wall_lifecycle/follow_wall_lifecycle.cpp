@@ -40,7 +40,7 @@ enum actions decide_action(struct laserscan_result laser){
 LCNcalc_dir::LCNcalc_dir() : rclcpp_lifecycle::LifecycleNode("follow_wall_node"){
     pub_ = create_publisher<std_msgs::msg::Float64>("configured_speed", 100);
     twist_pub_ = create_publisher<geometry_msgs::msg::Twist>("/mobile_base_controller/cmd_vel_unstamped", 10);
-    lasersub_ = create_subscription<sensor_msgs/msg/LaserScan>(
+    lasersub_ = create_subscription<sensor_msgs::msg::LaserScan>(
       "scan_raw", 10, std::bind(&LCNcalc_dir::callback, this, _1));
     RCLCPP_INFO(get_logger(), "Creating LFC!!!");
 }
@@ -137,8 +137,8 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg) con
         }
       }
     }
-    this.average_side_values[i][0]=counterF;
-    this.average_side_values[i][1]=counterN;
+    average_side_values[i][0]=counterF;
+    average_side_values[i][1]=counterN;
   }
                               
 }
