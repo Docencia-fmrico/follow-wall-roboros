@@ -12,6 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#ifndef FOLLOW_WALL_LIFECYCLE_HPP_
+#define FOLLOW_WALL_LIFECYCLE_HPP_
+
 #include <memory>
 
 #include "lifecycle_msgs/msg/state.hpp"
@@ -54,8 +57,8 @@ using CallbackReturnT = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterfac
 
 class LCNcalc_dir : public rclcpp_lifecycle::LifecycleNode
 {
-private:
-  double speed_;
+public:
+    double speed_;
     rclcpp_lifecycle::LifecyclePublisher<std_msgs::msg::Float64>::SharedPtr pub_;
     rclcpp_lifecycle::LifecyclePublisher<geometry_msgs::msg::Twist>::SharedPtr twist_pub_;
     geometry_msgs::msg::Twist generate_twist_msg(enum actions action);
@@ -71,3 +74,5 @@ public:
     void do_work();
 
 };
+
+#endif  //FOLLOW_WALL_LIFECYCLE_HPP_

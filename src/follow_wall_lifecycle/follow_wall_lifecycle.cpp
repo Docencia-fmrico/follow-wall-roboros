@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "lifecycle_node.hpp"
+#include "follow_wall_lifecycle/follow_wall_lifecycle.hpp"
 
 enum actions decide_action(struct laserscan_result laser){
   //avoid colisions
@@ -33,7 +33,7 @@ enum actions decide_action(struct laserscan_result laser){
   return MOVING_TURN_RIGHT;
 }
 
-LCNcalc_dir::LCNcalc_dir() : rclcpp_lifecycle::LifecycleNode("lifecycle_node_example"){
+LCNcalc_dir::LCNcalc_dir() : rclcpp_lifecycle::LifecycleNode("follow_wall_node"){
     pub_ = create_publisher<std_msgs::msg::Float64>("configured_speed", 100);
     twist_pub_ = create_publisher<geometry_msgs::msg::Twist>("/mobile_base_controller/cmd_vel_unstamped", 10);
     RCLCPP_INFO(get_logger(), "Creating LFC!!!");
@@ -126,18 +126,3 @@ geometry_msgs::msg::Twist LCNcalc_dir::generate_twist_msg(enum actions action){
   return msg;
 }
 
-int main(int argc, char * argv[])
-{
-  rclcpp::init(argc, argv);
-  auto node = std::make_shared<LCNcalc_dir>();
-  rclcpp::Rate rate(5);
-
-  while (rclcpp::ok()) {
-    node->do_work();
-    rclcpp::spin_some(node->get_node_base_interface());
-    rate.sleep();
-  }
-  rclcpp::shutdown();
-
-  return 0;
-}

@@ -27,29 +27,45 @@ find_package(rclcpp_lifecycle REQUIRED)
 
 
 set(dependencies 
-  "rclcpp"
-  "std_msgs"
-  "sensor_msgs"
-  "geometry_msgs"
+  rclcpp
+  std_msgs
+  sensor_msgs
+  geometry_msgs
   rclcpp_lifecycle
 )
 
+include_directories(include)
+
+add_library(follow_wall_lifecycle SHARED src/follow_wall_lifecycle/follow_wall_lifecycle.cpp)
+ament_target_dependencies(follow_wall_lifecycle ${dependencies})
+
+add_executable(follow-wall
+  src/follow_wall_main.cpp
+)
+ament_target_dependencies(follow-wall ${dependencies})
+target_link_libraries(follow-wall follow_wall_lifecycle)
 
 
 #add_executable(engine_node src/follow-wall/engine_node.cpp)
 #ament_target_dependencies(engine_node ${dependencies})
 
-add_executable(calculate_direction src/calculate_direction.cpp)
-ament_target_dependencies(calculate_direction ${dependencies})
+#add_executable(calculate_direction src/calculate_direction.cpp)
+#ament_target_dependencies(calculate_direction ${dependencies})
 
-add_executable(lifecycle_node src/lifecycle_node/lifecycle_node.cpp)
-ament_target_dependencies(lifecycle_node ${dependencies})
+#add_executable(lifecycle_node src/lifecycle_node/lifecycle_node.cpp)
+#ament_target_dependencies(lifecycle_node ${dependencies})
+
+#add_executable(follow_wall_main src/follow_wall_main.cpp)
+#ament_target_dependencies(follow_wall_main ${dependencies})
 
 
 install(TARGETS
-  calculate_direction 
+  #calculate_direction 
   #engine_node
-  lifecycle_node
+  #lifecycle_node
+  follow_wall_lifecycle
+  follow-wall
+  
 
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
@@ -71,7 +87,9 @@ if(BUILD_TESTING)
   # uncomment the line when this package is not in a git repo
   #set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
+  find_package(ament_cmake_gtest REQUIRED)
+  add_subdirectory(test)
 endif()
-ament_export_dependencies(${dependencies})
 
+ament_export_dependencies(${dependencies})
 ament_package()
