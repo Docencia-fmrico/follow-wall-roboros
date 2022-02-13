@@ -1,0 +1,307 @@
+[0.000000] (-) TimerEvent: {}
+[0.000529] (follow-wall) JobQueued: {'identifier': 'follow-wall', 'dependencies': OrderedDict()}
+[0.001195] (follow-wall) JobStarted: {'identifier': 'follow-wall'}
+[0.073771] (follow-wall) JobProgress: {'identifier': 'follow-wall', 'progress': 'cmake'}
+[0.099151] (-) TimerEvent: {}
+[0.107726] (follow-wall) JobProgress: {'identifier': 'follow-wall', 'progress': 'build'}
+[0.110734] (follow-wall) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/build/follow-wall', '--', '-j4', '-l4'], 'cwd': '/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/build/follow-wall', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('VNCDESKTOP', 'f-l3210-pc04.aulas.etsit.urjc.es:1 (acmp)'), ('USER', 'acmp'), ('SSH_CLIENT', '193.147.79.63 40366 22'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/home/alumnos/acmp/colcon_ws/install/velocity_controllers/lib:/home/alumnos/acmp/colcon_ws/install/test_ci/lib:/home/alumnos/acmp/colcon_ws/install/rqt_cascade_hfsm/lib:/home/alumnos/acmp/colcon_ws/install/ros2talk_msgs/lib:/home/alumnos/acmp/colcon_ws/install/position_controllers/lib:/home/alumnos/acmp/colcon_ws/install/joint_trajectory_controller/lib:/home/alumnos/acmp/colcon_ws/install/joint_state_controller/lib:/home/alumnos/acmp/colcon_ws/install/joint_state_broadcaster/lib:/home/alumnos/acmp/colcon_ws/install/imu_sensor_broadcaster/lib:/home/alumnos/acmp/colcon_ws/install/gripper_controllers/lib:/home/alumnos/acmp/colcon_ws/install/gazebo_ros2_control/lib:/home/alumnos/acmp/colcon_ws/install/effort_controllers/lib:/home/alumnos/acmp/colcon_ws/install/forward_command_controller/lib:/home/alumnos/acmp/colcon_ws/install/force_torque_sensor_broadcaster/lib:/home/alumnos/acmp/colcon_ws/install/diff_drive_controller/lib:/home/alumnos/acmp/colcon_ws/install/controller_manager/lib:/home/alumnos/acmp/colcon_ws/install/controller_interface/lib:/home/alumnos/acmp/colcon_ws/install/hardware_interface/lib:/home/alumnos/acmp/colcon_ws/install/groot/lib:/home/alumnos/acmp/colcon_ws/install/example_test/lib:/home/alumnos/acmp/colcon_ws/install/controller_manager_msgs/lib:/home/alumnos/acmp/colcon_ws/install/blackboard/lib:/home/alumnos/acmp/colcon_ws/install/blackboard_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/alumnos/acmp'), ('OLDPWD', '/home/alumnos/acmp'), ('ROS_PYTHON_VERSION', '3'), ('GOROOT', '/usr/lib/go'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:abstract=/tmp/dbus-ga7EHV6GHy,guid=dfbc2217ba25237c383114126208f317'), ('MESG', 'y'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/alumnos/acmp/colcon_ws/install'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'acmp'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/local/games:/usr/lib/go/bin:./'), ('SESSION_MANAGER', 'local/f-l3210-pc04:@/tmp/.ICE-unix/260190,unix/f-l3210-pc04:/tmp/.ICE-unix/260190'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/3177b1e4_7e07_4964_b343_6fbe93c4aff5'), ('XDG_RUNTIME_DIR', '/run/user/9400'), ('DISPLAY', ':1'), ('LANG', 'es_ES.UTF-8'), ('XDG_CURRENT_DESKTOP', 'GNOME'), ('XMODIFIERS', '@im=ibus'), ('GNOME_TERMINAL_SERVICE', ':1.74'), ('SSH_AUTH_SOCK', '/run/user/9400/keyring/ssh'), ('ROS_DOMAIN_ID', '39'), ('AMENT_PREFIX_PATH', '/home/alumnos/acmp/colcon_ws/install/gazebo_ros2_control_demos:/home/alumnos/acmp/colcon_ws/install/ros2_controllers:/home/alumnos/acmp/colcon_ws/install/velocity_controllers:/home/alumnos/acmp/colcon_ws/install/urdf_test:/home/alumnos/acmp/colcon_ws/install/tiago_simulation:/home/alumnos/acmp/colcon_ws/install/tiago_robot:/home/alumnos/acmp/colcon_ws/install/tiago_2dnav_gazebo:/home/alumnos/acmp/colcon_ws/install/tiago_gazebo:/home/alumnos/acmp/colcon_ws/install/tiago_bringup:/home/alumnos/acmp/colcon_ws/install/pmb2_robot:/home/alumnos/acmp/colcon_ws/install/pmb2_bringup:/home/alumnos/acmp/colcon_ws/install/twist_mux:/home/alumnos/acmp/colcon_ws/install/transmission_interface:/home/alumnos/acmp/colcon_ws/install/tiago_description:/home/alumnos/acmp/colcon_ws/install/tiago_description_calibration:/home/alumnos/acmp/colcon_ws/install/tiago_controller_configuration:/home/alumnos/acmp/colcon_ws/install/test_hfsm:/home/alumnos/acmp/colcon_ws/install/test_ci:/home/alumnos/acmp/colcon_ws/install/services_ros2:/home/alumnos/acmp/colcon_ws/install/rqt_cascade_hfsm:/home/alumnos/acmp/colcon_ws/install/actions_ros2:/home/alumnos/acmp/colcon_ws/install/ros2talk_msgs:/home/alumnos/acmp/colcon_ws/install/ros2_control:/home/alumnos/acmp/colcon_ws/install/ros2controlcli:/home/alumnos/acmp/colcon_ws/install/ros2_control_test_assets:/home/alumnos/acmp/colcon_ws/install/pal_gripper:/home/alumnos/acmp/colcon_ws/install/pal_gripper_controller_configuration:/home/alumnos/acmp/colcon_ws/install/position_controllers:/home/alumnos/acmp/colcon_ws/install/pmb2_navigation:/home/alumnos/acmp/colcon_ws/install/pmb2_2dnav:/home/alumnos/acmp/colcon_ws/install/pmb2_maps:/home/alumnos/acmp/colcon_ws/install/pmb2_description:/home/alumnos/acmp/colcon_ws/install/pmb2_controller_configuration:/home/alumnos/acmp/colcon_ws/install/parameters_ros2:/home/alumnos/acmp/colcon_ws/install/pal_gripper_description:/home/alumnos/acmp/colcon_ws/install/pal_gazebo_worlds:/home/alumnos/acmp/colcon_ws/install/lifecycle_nodes_ros2:/home/alumnos/acmp/colcon_ws/install/launchers_ros2:/home/alumnos/acmp/colcon_ws/install/launch_pal:/home/alumnos/acmp/colcon_ws/install/joint_trajectory_controller:/home/alumnos/acmp/colcon_ws/install/joint_state_controller:/home/alumnos/acmp/colcon_ws/install/joint_state_broadcaster:/home/alumnos/acmp/colcon_ws/install/intro_ros2:/home/alumnos/acmp/colcon_ws/install/intro_py_ros2:/home/alumnos/acmp/colcon_ws/install/imu_sensor_broadcaster:/home/alumnos/acmp/colcon_ws/install/hey5_description:/home/alumnos/acmp/colcon_ws/install/gripper_controllers:/home/alumnos/acmp/colcon_ws/install/gazebo_ros2_control:/home/alumnos/acmp/colcon_ws/install/effort_controllers:/home/alumnos/acmp/colcon_ws/install/forward_command_controller:/home/alumnos/acmp/colcon_ws/install/force_torque_sensor_broadcaster:/home/alumnos/acmp/colcon_ws/install/diff_drive_controller:/home/alumnos/acmp/colcon_ws/install/controller_manager:/home/alumnos/acmp/colcon_ws/install/controller_interface:/home/alumnos/acmp/colcon_ws/install/hardware_interface:/home/alumnos/acmp/colcon_ws/install/groot:/home/alumnos/acmp/colcon_ws/install/example_test:/home/alumnos/acmp/colcon_ws/install/controller_manager_msgs:/home/alumnos/acmp/colcon_ws/install/br2_tiago:/home/alumnos/acmp/colcon_ws/install/br2_navigation:/home/alumnos/acmp/colcon_ws/install/blackboard:/home/alumnos/acmp/colcon_ws/install/blackboard_msgs:/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/build/follow-wall'), ('SSH_CONNECTION', '193.147.79.63 40366 212.128.255.184 22'), ('PYTHONPATH', '/home/alumnos/acmp/colcon_ws/install/urdf_test/lib/python3.8/site-packages:/home/alumnos/acmp/colcon_ws/install/tiago_description/lib/python3.8/site-packages:/home/alumnos/acmp/colcon_ws/install/ros2talk_msgs/lib/python3.8/site-packages:/home/alumnos/acmp/colcon_ws/build/ros2controlcli:/home/alumnos/acmp/colcon_ws/install/ros2controlcli/lib/python3.8/site-packages:/home/alumnos/acmp/colcon_ws/install/pmb2_description/lib/python3.8/site-packages:/home/alumnos/acmp/colcon_ws/build/launch_pal:/home/alumnos/acmp/colcon_ws/install/launch_pal/lib/python3.8/site-packages:/home/alumnos/acmp/colcon_ws/build/intro_py_ros2:/home/alumnos/acmp/colcon_ws/install/intro_py_ros2/lib/python3.8/site-packages:/home/alumnos/acmp/colcon_ws/install/controller_manager/lib/python3.8/site-packages:/home/alumnos/acmp/colcon_ws/install/controller_manager_msgs/lib/python3.8/site-packages:/home/alumnos/acmp/colcon_ws/install/blackboard_msgs/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('EDITOR', '/usr/bin/vim'), ('CMAKE_PREFIX_PATH', '/home/alumnos/acmp/colcon_ws/install/gazebo_ros2_control_demos:/home/alumnos/acmp/colcon_ws/install/ros2_controllers:/home/alumnos/acmp/colcon_ws/install/velocity_controllers:/home/alumnos/acmp/colcon_ws/install/urdf_test:/home/alumnos/acmp/colcon_ws/install/tiago_simulation:/home/alumnos/acmp/colcon_ws/install/tiago_robot:/home/alumnos/acmp/colcon_ws/install/tiago_2dnav_gazebo:/home/alumnos/acmp/colcon_ws/install/tiago_gazebo:/home/alumnos/acmp/colcon_ws/install/tiago_bringup:/home/alumnos/acmp/colcon_ws/install/pmb2_robot:/home/alumnos/acmp/colcon_ws/install/pmb2_bringup:/home/alumnos/acmp/colcon_ws/install/twist_mux:/home/alumnos/acmp/colcon_ws/install/transmission_interface:/home/alumnos/acmp/colcon_ws/install/tiago_description:/home/alumnos/acmp/colcon_ws/install/tiago_description_calibration:/home/alumnos/acmp/colcon_ws/install/tiago_controller_configuration:/home/alumnos/acmp/colcon_ws/install/test_hfsm:/home/alumnos/acmp/colcon_ws/install/test_ci:/home/alumnos/acmp/colcon_ws/install/services_ros2:/home/alumnos/acmp/colcon_ws/install/rqt_cascade_hfsm:/home/alumnos/acmp/colcon_ws/install/actions_ros2:/home/alumnos/acmp/colcon_ws/install/ros2talk_msgs:/home/alumnos/acmp/colcon_ws/install/ros2_control:/home/alumnos/acmp/colcon_ws/install/ros2_control_test_assets:/home/alumnos/acmp/colcon_ws/install/pal_gripper:/home/alumnos/acmp/colcon_ws/install/pal_gripper_controller_configuration:/home/alumnos/acmp/colcon_ws/install/position_controllers:/home/alumnos/acmp/colcon_ws/install/pmb2_navigation:/home/alumnos/acmp/colcon_ws/install/pmb2_2dnav:/home/alumnos/acmp/colcon_ws/install/pmb2_maps:/home/alumnos/acmp/colcon_ws/install/pmb2_description:/home/alumnos/acmp/colcon_ws/install/pmb2_controller_configuration:/home/alumnos/acmp/colcon_ws/install/parameters_ros2:/home/alumnos/acmp/colcon_ws/install/pal_gripper_description:/home/alumnos/acmp/colcon_ws/install/pal_gazebo_worlds:/home/alumnos/acmp/colcon_ws/install/lifecycle_nodes_ros2:/home/alumnos/acmp/colcon_ws/install/launchers_ros2:/home/alumnos/acmp/colcon_ws/install/joint_trajectory_controller:/home/alumnos/acmp/colcon_ws/install/joint_state_controller:/home/alumnos/acmp/colcon_ws/install/joint_state_broadcaster:/home/alumnos/acmp/colcon_ws/install/intro_ros2:/home/alumnos/acmp/colcon_ws/install/imu_sensor_broadcaster:/home/alumnos/acmp/colcon_ws/install/hey5_description:/home/alumnos/acmp/colcon_ws/install/gripper_controllers:/home/alumnos/acmp/colcon_ws/install/gazebo_ros2_control:/home/alumnos/acmp/colcon_ws/install/effort_controllers:/home/alumnos/acmp/colcon_ws/install/forward_command_controller:/home/alumnos/acmp/colcon_ws/install/force_torque_sensor_broadcaster:/home/alumnos/acmp/colcon_ws/install/diff_drive_controller:/home/alumnos/acmp/colcon_ws/install/controller_manager:/home/alumnos/acmp/colcon_ws/install/controller_interface:/home/alumnos/acmp/colcon_ws/install/hardware_interface:/home/alumnos/acmp/colcon_ws/install/groot:/home/alumnos/acmp/colcon_ws/install/example_test:/home/alumnos/acmp/colcon_ws/install/controller_manager_msgs:/home/alumnos/acmp/colcon_ws/install/br2_tiago:/home/alumnos/acmp/colcon_ws/install/br2_navigation:/home/alumnos/acmp/colcon_ws/install/blackboard:/home/alumnos/acmp/colcon_ws/install/blackboard_msgs:/home/alumnos/acmp/colcon_ws/install/ros2controlcli:/home/alumnos/acmp/colcon_ws/install/launch_pal:/home/alumnos/acmp/colcon_ws/install/intro_py_ros2:/opt/ros/foxy')]), 'shell': False}
+[0.199350] (-) TimerEvent: {}
+[0.300093] (-) TimerEvent: {}
+[0.400645] (-) TimerEvent: {}
+[0.501160] (-) TimerEvent: {}
+[0.601758] (-) TimerEvent: {}
+[0.638119] (follow-wall) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[0.701901] (-) TimerEvent: {}
+[0.723079] (follow-wall) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.802022] (-) TimerEvent: {}
+[0.902317] (-) TimerEvent: {}
+[1.002603] (-) TimerEvent: {}
+[1.066639] (follow-wall) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.102809] (-) TimerEvent: {}
+[1.167739] (follow-wall) StdoutLine: {'line': b'-- Found rclcpp: 2.4.1 (/opt/ros/foxy/share/rclcpp/cmake)\n'}
+[1.202923] (-) TimerEvent: {}
+[1.303280] (-) TimerEvent: {}
+[1.384358] (follow-wall) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.394190] (follow-wall) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.2.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)\n'}
+[1.403420] (-) TimerEvent: {}
+[1.503848] (-) TimerEvent: {}
+[1.604402] (-) TimerEvent: {}
+[1.704967] (-) TimerEvent: {}
+[1.805446] (-) TimerEvent: {}
+[1.905743] (-) TimerEvent: {}
+[2.006018] (-) TimerEvent: {}
+[2.106287] (-) TimerEvent: {}
+[2.206550] (-) TimerEvent: {}
+[2.306820] (-) TimerEvent: {}
+[2.313753] (follow-wall) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.372173] (follow-wall) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)\n'}
+[2.394476] (follow-wall) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[2.406922] (-) TimerEvent: {}
+[2.507164] (-) TimerEvent: {}
+[2.543750] (follow-wall) StdoutLine: {'line': b'-- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)\n'}
+[2.607290] (-) TimerEvent: {}
+[2.707526] (-) TimerEvent: {}
+[2.807801] (-) TimerEvent: {}
+[2.811556] (follow-wall) StdoutLine: {'line': b'-- Found rclcpp_lifecycle: 2.4.1 (/opt/ros/foxy/share/rclcpp_lifecycle/cmake)\n'}
+[2.907894] (-) TimerEvent: {}
+[3.008229] (-) TimerEvent: {}
+[3.108541] (-) TimerEvent: {}
+[3.162534] (follow-wall) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)\n'}
+[3.208706] (-) TimerEvent: {}
+[3.309002] (-) TimerEvent: {}
+[3.409328] (-) TimerEvent: {}
+[3.507211] (follow-wall) StdoutLine: {'line': b'-- Found ament_cmake_gtest: 0.9.9 (/opt/ros/foxy/share/ament_cmake_gtest/cmake)\n'}
+[3.509484] (-) TimerEvent: {}
+[3.609992] (-) TimerEvent: {}
+[3.710457] (-) TimerEvent: {}
+[3.744405] (follow-wall) StdoutLine: {'line': b"-- Found gtest sources under '/opt/ros/foxy/src/gtest_vendor': C++ tests using 'Google Test' will be built\n"}
+[3.752225] (follow-wall) StdoutLine: {'line': b'-- Check if compiler accepts -pthread\n'}
+[3.810599] (-) TimerEvent: {}
+[3.911207] (-) TimerEvent: {}
+[4.011790] (-) TimerEvent: {}
+[4.112378] (-) TimerEvent: {}
+[4.212935] (-) TimerEvent: {}
+[4.265510] (follow-wall) StdoutLine: {'line': b'-- Check if compiler accepts -pthread - yes\n'}
+[4.313338] (-) TimerEvent: {}
+[4.413937] (-) TimerEvent: {}
+[4.450467] (follow-wall) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[4.514083] (-) TimerEvent: {}
+[4.614388] (-) TimerEvent: {}
+[4.714659] (-) TimerEvent: {}
+[4.814909] (-) TimerEvent: {}
+[4.915160] (-) TimerEvent: {}
+[5.015425] (-) TimerEvent: {}
+[5.075263] (follow-wall) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[5.075541] (follow-wall) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include\n'}
+[5.076121] (follow-wall) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[5.115538] (-) TimerEvent: {}
+[5.215788] (-) TimerEvent: {}
+[5.316052] (-) TimerEvent: {}
+[5.416310] (-) TimerEvent: {}
+[5.516570] (-) TimerEvent: {}
+[5.570096] (follow-wall) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[5.570291] (follow-wall) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[5.616674] (-) TimerEvent: {}
+[5.631653] (follow-wall) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[5.716765] (-) TimerEvent: {}
+[5.780554] (follow-wall) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[5.816834] (-) TimerEvent: {}
+[5.835367] (follow-wall) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the style conventions in PEP 257\n"}
+[5.916948] (-) TimerEvent: {}
+[6.017216] (-) TimerEvent: {}
+[6.117564] (-) TimerEvent: {}
+[6.218026] (-) TimerEvent: {}
+[6.318263] (-) TimerEvent: {}
+[6.322439] (follow-wall) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[6.322584] (follow-wall) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[6.386643] (follow-wall) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[6.418446] (-) TimerEvent: {}
+[6.510486] (follow-wall) StdoutLine: {'line': b'-- Configuring done\n'}
+[6.518565] (-) TimerEvent: {}
+[6.619081] (-) TimerEvent: {}
+[6.719627] (-) TimerEvent: {}
+[6.820171] (-) TimerEvent: {}
+[6.920748] (-) TimerEvent: {}
+[7.021356] (-) TimerEvent: {}
+[7.121940] (-) TimerEvent: {}
+[7.128526] (follow-wall) StdoutLine: {'line': b'-- Generating done\n'}
+[7.222127] (-) TimerEvent: {}
+[7.268831] (follow-wall) StdoutLine: {'line': b'-- Build files have been written to: /home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/build/follow-wall\n'}
+[7.322326] (-) TimerEvent: {}
+[7.405412] (follow-wall) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target follow_wall_lifecycle\x1b[0m\n'}
+[7.405789] (follow-wall) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target gtest\x1b[0m\n'}
+[7.406356] (follow-wall) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target gtest_main\x1b[0m\n'}
+[7.422410] (-) TimerEvent: {}
+[7.454568] (follow-wall) StderrLine: {'line': b"make[2]: Atenci\xc3\xb3n: El archivo 'gtest/CMakeFiles/gtest.dir/depend.make' tiene una hora de modificaci\xc3\xb3n 0,0073 s en el futuro\n"}
+[7.480916] (follow-wall) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o\x1b[0m\n'}
+[7.481181] (follow-wall) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o\x1b[0m\n'}
+[7.522534] (-) TimerEvent: {}
+[7.576138] (follow-wall) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/follow_wall_lifecycle.dir/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp.o\x1b[0m\n'}
+[7.622648] (-) TimerEvent: {}
+[7.722993] (-) TimerEvent: {}
+[7.823277] (-) TimerEvent: {}
+[7.923659] (-) TimerEvent: {}
+[8.024038] (-) TimerEvent: {}
+[8.124409] (-) TimerEvent: {}
+[8.224782] (-) TimerEvent: {}
+[8.325502] (-) TimerEvent: {}
+[8.425798] (-) TimerEvent: {}
+[8.526186] (-) TimerEvent: {}
+[8.602032] (follow-wall) StdoutLine: {'line': b'[ 40%] \x1b[32m\x1b[1mLinking CXX static library libgtest_main.a\x1b[0m\n'}
+[8.626308] (-) TimerEvent: {}
+[8.680282] (follow-wall) StdoutLine: {'line': b'[ 40%] Built target gtest_main\n'}
+[8.726401] (-) TimerEvent: {}
+[8.826786] (-) TimerEvent: {}
+[8.893575] (follow-wall) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15\x1b[m\x1b[K:\n'}
+[8.893790] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:62:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KLASERPARTITION\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[8.894537] (follow-wall) StderrLine: {'line': b'   62 |     float average_side_values[\x1b[01;31m\x1b[KLASERPARTITION\x1b[m\x1b[K][2];\n'}
+[8.894616] (follow-wall) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[8.903744] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:66:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KLifecycleSuscriptor\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[Krclcpp_lifecycle\x1b[m\x1b[K\xe2\x80\x99 does not name a template type\n'}
+[8.903928] (follow-wall) StderrLine: {'line': b'   66 |     rclcpp_lifecycle::\x1b[01;31m\x1b[KLifecycleSuscriptor\x1b[m\x1b[K<geometry_msgs::msg::Twist>::SharedPtr lasersub_;\n'}
+[8.904558] (follow-wall) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[8.906069] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:80:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[8.906608] (follow-wall) StderrLine: {'line': b'   80 |   void callback(const \x1b[01;31m\x1b[Ksensor_msgs\x1b[m\x1b[K::msg::LaserScan::SharedPtr msg);\n'}
+[8.906703] (follow-wall) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[8.906844] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:80:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[K::\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[8.907436] (follow-wall) StderrLine: {'line': b'   80 |   void callback(const sensor_msgs::msg\x1b[01;31m\x1b[K::\x1b[m\x1b[KLaserScan::SharedPtr msg);\n'}
+[8.907502] (follow-wall) StderrLine: {'line': b'      |                                       \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[8.907596] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:80:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K::\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[8.908081] (follow-wall) StderrLine: {'line': b'   80 |   void callback\x1b[34m\x1b[K(\x1b[m\x1b[Kconst sensor_msgs::msg\x1b[01;31m\x1b[K:\x1b[m\x1b[K\x1b[32m\x1b[K:\x1b[m\x1b[KLaserScan::SharedPtr msg);\n'}
+[8.908141] (follow-wall) StderrLine: {'line': b'      |                \x1b[34m\x1b[K~\x1b[m\x1b[K                      \x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[32m\x1b[K~\x1b[m\x1b[K\n'}
+[8.908196] (follow-wall) StderrLine: {'line': b'      |                                       \x1b[32m\x1b[K)\x1b[m\x1b[K\n'}
+[8.908304] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:80:36:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[8.912623] (follow-wall) StderrLine: {'line': b'   80 |   void callback(const sensor_msgs::\x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K::LaserScan::SharedPtr msg);\n'}
+[8.912728] (follow-wall) StderrLine: {'line': b'      |                                    \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[8.913276] (follow-wall) StderrLine: {'line': b'      |                                       \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[8.913366] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:80:41:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KLaserScan\x1b[m\x1b[K\xe2\x80\x99 in namespace \xe2\x80\x98\x1b[01m\x1b[K::\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[8.913432] (follow-wall) StderrLine: {'line': b'   80 |   void callback(const sensor_msgs::msg::\x1b[01;31m\x1b[KLaserScan\x1b[m\x1b[K::SharedPtr msg);\n'}
+[8.913490] (follow-wall) StderrLine: {'line': b'      |                                         \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[8.914034] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kint rad2degr(float)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[8.914108] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:18:12:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[Kfloat\x1b[m\x1b[K\xe2\x80\x99\n'}
+[8.914198] (follow-wall) StderrLine: {'line': b'   18 |     return \x1b[01;31m\x1b[Kfloat\x1b[m\x1b[K*(180/3.1416);\n'}
+[8.914806] (follow-wall) StderrLine: {'line': b'      |            \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[8.914911] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:18:11:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[Kfloat\x1b[m\x1b[K\xe2\x80\x99\n'}
+[8.915416] (follow-wall) StderrLine: {'line': b'   18 |     return\x1b[01;31m\x1b[K \x1b[m\x1b[K\x1b[32m\x1b[Kfloat\x1b[m\x1b[K*(180/3.1416);\n'}
+[8.915478] (follow-wall) StderrLine: {'line': b'      |           \x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[32m\x1b[K~~~~~\x1b[m\x1b[K\n'}
+[8.915538] (follow-wall) StderrLine: {'line': b'      |           \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[8.915623] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:18:19:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before numeric constant\n'}
+[8.916048] (follow-wall) StderrLine: {'line': b'   18 |     return float*(\x1b[01;31m\x1b[K180\x1b[m\x1b[K/3.1416);\n'}
+[8.916129] (follow-wall) StderrLine: {'line': b'      |                   \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[8.916185] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:18:19:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before numeric constant\n'}
+[8.916268] (follow-wall) StderrLine: {'line': b'   18 |     return float*\x1b[34m\x1b[K(\x1b[m\x1b[K\x1b[01;31m\x1b[K1\x1b[m\x1b[K\x1b[32m\x1b[K80\x1b[m\x1b[K/3.1416);\n'}
+[8.916345] (follow-wall) StderrLine: {'line': b'      |                  \x1b[34m\x1b[K~\x1b[m\x1b[K\x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[32m\x1b[K~~\x1b[m\x1b[K\n'}
+[8.917004] (follow-wall) StderrLine: {'line': b'      |                   \x1b[32m\x1b[K)\x1b[m\x1b[K\n'}
+[8.917083] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:17:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Krad\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[8.917140] (follow-wall) StderrLine: {'line': b'   17 | int rad2degr(\x1b[01;35m\x1b[Kfloat rad\x1b[m\x1b[K){\n'}
+[8.917965] (follow-wall) StderrLine: {'line': b'      |              \x1b[01;35m\x1b[K~~~~~~^~~\x1b[m\x1b[K\n'}
+[8.918028] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KLCNcalc_dir::LCNcalc_dir()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[8.918084] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:43:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Klasersub_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[8.918168] (follow-wall) StderrLine: {'line': b'   43 |     \x1b[01;31m\x1b[Klasersub_\x1b[m\x1b[K = create_subscription<sensor_msgs/msg/LaserScan>(\n'}
+[8.918664] (follow-wall) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[8.918724] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:43:37:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[8.918780] (follow-wall) StderrLine: {'line': b'   43 |     lasersub_ = create_subscription<\x1b[01;31m\x1b[Ksensor_msgs\x1b[m\x1b[K/msg/LaserScan>(\n'}
+[8.918863] (follow-wall) StderrLine: {'line': b'      |                                     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[8.919514] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:43:49:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[8.919574] (follow-wall) StderrLine: {'line': b'   43 |     lasersub_ = create_subscription<sensor_msgs/\x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K/LaserScan>(\n'}
+[8.919628] (follow-wall) StderrLine: {'line': b'      |                                                 \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[8.919681] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:43:49:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Ksuggested alternatives:\n'}
+[8.919766] (follow-wall) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/lifecycle_msgs/msg/state.hpp:7\x1b[m\x1b[K,\n'}
+[8.920399] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:20\x1b[m\x1b[K,\n'}
+[8.920455] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15\x1b[m\x1b[K:\n'}
+[8.920508] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/lifecycle_msgs/msg/detail/state__struct.hpp:26:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Klifecycle_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[8.920587] (follow-wall) StderrLine: {'line': b'   26 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[8.921052] (follow-wall) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[8.921110] (follow-wall) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/std_msgs/msg/float64.hpp:7\x1b[m\x1b[K,\n'}
+[8.921165] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:21\x1b[m\x1b[K,\n'}
+[8.921232] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15\x1b[m\x1b[K:\n'}
+[8.921798] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/std_msgs/msg/detail/float64__struct.hpp:26:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[8.921858] (follow-wall) StderrLine: {'line': b'   26 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[8.921913] (follow-wall) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[8.921978] (follow-wall) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/builtin_interfaces/msg/duration.hpp:7\x1b[m\x1b[K,\n'}
+[8.922518] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/duration.hpp:20\x1b[m\x1b[K,\n'}
+[8.922579] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/qos.hpp:20\x1b[m\x1b[K,\n'}
+[8.922632] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/node_interfaces/node_graph_interface.hpp:31\x1b[m\x1b[K,\n'}
+[8.922693] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/client.hpp:34\x1b[m\x1b[K,\n'}
+[8.922773] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/callback_group.hpp:23\x1b[m\x1b[K,\n'}
+[8.923454] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[8.923522] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24\x1b[m\x1b[K,\n'}
+[8.923582] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[8.924126] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[8.924184] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor.hpp:33\x1b[m\x1b[K,\n'}
+[8.924238] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26\x1b[m\x1b[K,\n'}
+[8.924293] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[8.924796] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146\x1b[m\x1b[K,\n'}
+[8.924851] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:23\x1b[m\x1b[K,\n'}
+[8.924905] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15\x1b[m\x1b[K:\n'}
+[8.924959] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/builtin_interfaces/msg/detail/duration__struct.hpp:26:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kbuiltin_interfaces::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[8.925014] (follow-wall) StderrLine: {'line': b'   26 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[8.925702] (follow-wall) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[8.925765] (follow-wall) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/statistics_msgs/msg/detail/metrics_message__struct.hpp:22\x1b[m\x1b[K,\n'}
+[8.925823] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/statistics_msgs/msg/metrics_message.hpp:7\x1b[m\x1b[K,\n'}
+[8.925888] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/libstatistics_collector/collector/generate_statistics_message.hpp:21\x1b[m\x1b[K,\n'}
+[8.926473] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23\x1b[m\x1b[K,\n'}
+[8.926531] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[8.926586] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[8.926639] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24\x1b[m\x1b[K,\n'}
+[8.927140] (-) TimerEvent: {}
+[8.927293] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[8.927877] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[8.927936] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executor.hpp:33\x1b[m\x1b[K,\n'}
+[8.927994] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26\x1b[m\x1b[K,\n'}
+[8.928048] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[8.928529] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146\x1b[m\x1b[K,\n'}
+[8.928602] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:23\x1b[m\x1b[K,\n'}
+[8.928658] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15\x1b[m\x1b[K:\n'}
+[8.928713] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:26:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstatistics_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[8.928829] (follow-wall) StderrLine: {'line': b'   26 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[8.933014] (follow-wall) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[8.933096] (follow-wall) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/rcl_interfaces/msg/list_parameters_result.hpp:7\x1b[m\x1b[K,\n'}
+[8.933162] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/node.hpp:34\x1b[m\x1b[K,\n'}
+[8.933853] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[8.933925] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[8.933997] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146\x1b[m\x1b[K,\n'}
+[8.934509] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:23\x1b[m\x1b[K,\n'}
+[8.934569] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15\x1b[m\x1b[K:\n'}
+[8.934629] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/rcl_interfaces/msg/detail/list_parameters_result__struct.hpp:26:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Krcl_interfaces::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[8.934686] (follow-wall) StderrLine: {'line': b'   26 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[8.936570] (follow-wall) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[8.936639] (follow-wall) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/foxy/include/geometry_msgs/msg/detail/twist__struct.hpp:20\x1b[m\x1b[K,\n'}
+[8.936697] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/foxy/include/geometry_msgs/msg/twist.hpp:7\x1b[m\x1b[K,\n'}
+[8.936751] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:25\x1b[m\x1b[K,\n'}
+[8.936805] (follow-wall) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15\x1b[m\x1b[K:\n'}
+[8.937331] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/foxy/include/geometry_msgs/msg/detail/vector3__struct.hpp:26:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kgeometry_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[8.937390] (follow-wall) StderrLine: {'line': b'   26 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[8.937448] (follow-wall) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[8.937501] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:43:53:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KLaserScan\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[8.937557] (follow-wall) StderrLine: {'line': b'   43 |     lasersub_ = create_subscription<sensor_msgs/msg/\x1b[01;31m\x1b[KLaserScan\x1b[m\x1b[K>(\n'}
+[8.937611] (follow-wall) StderrLine: {'line': b'      |                                                     \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[8.942211] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:44:34:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KEngineNode\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[8.942356] (follow-wall) StderrLine: {'line': b'   44 |       "scan_raw", 10, std::bind(&\x1b[01;31m\x1b[KEngineNode\x1b[m\x1b[K::callback, this, _1));\n'}
+[8.942873] (follow-wall) StderrLine: {'line': b'      |                                  \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[8.942933] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:\x1b[m\x1b[K At global scope:\n'}
+[8.942992] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:100:22:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ksensor_msgs\x1b[m\x1b[K\xe2\x80\x99 does not name a type\n'}
+[8.943048] (follow-wall) StderrLine: {'line': b'  100 |  void callback(const \x1b[01;31m\x1b[Ksensor_msgs\x1b[m\x1b[K::msg::LaserScan::SharedPtr msg) const\n'}
+[8.943474] (follow-wall) StderrLine: {'line': b'      |                      \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[8.943532] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:100:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id before \xe2\x80\x98\x1b[01m\x1b[K::\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[8.943588] (follow-wall) StderrLine: {'line': b'  100 |  void callback(const sensor_msgs::msg\x1b[01;31m\x1b[K::\x1b[m\x1b[KLaserScan::SharedPtr msg) const\n'}
+[8.943640] (follow-wall) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[8.943694] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:100:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 before \xe2\x80\x98\x1b[01m\x1b[K::\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[8.944298] (follow-wall) StderrLine: {'line': b'  100 |  void callback\x1b[34m\x1b[K(\x1b[m\x1b[Kconst sensor_msgs::msg\x1b[01;31m\x1b[K:\x1b[m\x1b[K\x1b[32m\x1b[K:\x1b[m\x1b[KLaserScan::SharedPtr msg) const\n'}
+[8.944360] (follow-wall) StderrLine: {'line': b'      |               \x1b[34m\x1b[K~\x1b[m\x1b[K                      \x1b[01;31m\x1b[K^\x1b[m\x1b[K\x1b[32m\x1b[K~\x1b[m\x1b[K\n'}
+[8.944418] (follow-wall) StderrLine: {'line': b'      |                                      \x1b[32m\x1b[K)\x1b[m\x1b[K\n'}
+[8.944472] (follow-wall) StderrLine: {'line': b'\x1b[01m\x1b[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:100:38:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected initializer before \xe2\x80\x98\x1b[01m\x1b[K::\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[8.944946] (follow-wall) StderrLine: {'line': b'  100 |  void callback(const sensor_msgs::msg\x1b[01;31m\x1b[K::\x1b[m\x1b[KLaserScan::SharedPtr msg) const\n'}
+[8.945006] (follow-wall) StderrLine: {'line': b'      |                                      \x1b[01;31m\x1b[K^~\x1b[m\x1b[K\n'}
+[9.027268] (-) TimerEvent: {}
+[9.127563] (-) TimerEvent: {}
+[9.227864] (-) TimerEvent: {}
+[9.328174] (-) TimerEvent: {}
+[9.428480] (-) TimerEvent: {}
+[9.528805] (-) TimerEvent: {}
+[9.629105] (-) TimerEvent: {}
+[9.729410] (-) TimerEvent: {}
+[9.773465] (follow-wall) StderrLine: {'line': b'make[2]: *** [CMakeFiles/follow_wall_lifecycle.dir/build.make:63: CMakeFiles/follow_wall_lifecycle.dir/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp.o] Error 1\n'}
+[9.774368] (follow-wall) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:148: CMakeFiles/follow_wall_lifecycle.dir/all] Error 2\n'}
+[9.774588] (follow-wall) StderrLine: {'line': b'make[1]: *** Se espera a que terminen otras tareas....\n'}
+[9.829529] (-) TimerEvent: {}
+[9.929846] (-) TimerEvent: {}
+[10.030133] (-) TimerEvent: {}
+[10.130439] (-) TimerEvent: {}
+[10.230711] (-) TimerEvent: {}
+[10.331005] (-) TimerEvent: {}
+[10.431299] (-) TimerEvent: {}
+[10.531579] (-) TimerEvent: {}
+[10.631881] (-) TimerEvent: {}
+[10.732164] (-) TimerEvent: {}
+[10.832427] (-) TimerEvent: {}
+[10.906491] (follow-wall) StdoutLine: {'line': b'[ 50%] \x1b[32m\x1b[1mLinking CXX static library libgtest.a\x1b[0m\n'}
+[10.932548] (-) TimerEvent: {}
+[11.032871] (-) TimerEvent: {}
+[11.105781] (follow-wall) StderrLine: {'line': b'make[2]: atenci\xc3\xb3n: Se ha detectado una desviaci\xc3\xb3n en el reloj. La construcci\xc3\xb3n podr\xc3\xada estar incompleta.\n'}
+[11.133056] (-) TimerEvent: {}
+[11.151492] (follow-wall) StdoutLine: {'line': b'[ 50%] Built target gtest\n'}
+[11.153920] (follow-wall) StderrLine: {'line': b'make: *** [Makefile:141: all] Error 2\n'}
+[11.158496] (follow-wall) CommandEnded: {'returncode': 2}
+[11.233216] (-) TimerEvent: {}
+[11.325517] (follow-wall) JobEnded: {'identifier': 'follow-wall', 'rc': 2}
+[11.331646] (-) EventReactorShutdown: {}

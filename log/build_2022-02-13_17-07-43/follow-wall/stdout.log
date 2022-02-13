@@ -1,0 +1,4 @@
+[35m[1mScanning dependencies of target follow_wall_lifecycle[0m
+[ 30%] Built target gtest
+[ 40%] Built target gtest_main
+[ 50%] [32mBuilding CXX object CMakeFiles/follow_wall_lifecycle.dir/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp.o[0m

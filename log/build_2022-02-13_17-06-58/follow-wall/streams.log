@@ -1,0 +1,136 @@
+[0.075s] Invoking command in '/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/build/follow-wall': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/alumnos/acmp/colcon_ws/install/ros2controlcli:/home/alumnos/acmp/colcon_ws/install/launch_pal:/home/alumnos/acmp/colcon_ws/install/intro_py_ros2:/opt/ros/foxy /usr/bin/cmake --build /home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/build/follow-wall -- -j4 -l4
+[0.202s] [35m[1mScanning dependencies of target follow_wall_lifecycle[0m
+[0.224s] [ 40%] Built target gtest
+[0.225s] [ 40%] Built target gtest_main
+[0.386s] [ 50%] [32mBuilding CXX object CMakeFiles/follow_wall_lifecycle.dir/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp.o[0m
+[1.632s] In file included from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15[m[K:
+[1.632s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:75:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kensor_msgs[m[K’ was not declared in this scope; did you mean ‘[01m[Ksensor_msgs[m[K’?
+[1.632s]    75 |     rclcpp::Subscription<[01;31m[Kensor_msgs[m[K/msg/LaserScan>::SharedPtr lasersub_;
+[1.632s]       |                          [01;31m[K^~~~~~~~~~[m[K
+[1.633s]       |                          [32m[Ksensor_msgs[m[K
+[1.633s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:75:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ was not declared in this scope
+[1.634s]    75 |     rclcpp::Subscription<ensor_msgs/[01;31m[Kmsg[m[K/LaserScan>::SharedPtr lasersub_;
+[1.634s]       |                                     [01;31m[K^~~[m[K
+[1.634s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:75:37:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+[1.634s] In file included from [01m[K/opt/ros/foxy/include/lifecycle_msgs/msg/state.hpp:7[m[K,
+[1.634s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:20[m[K,
+[1.635s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15[m[K:
+[1.635s] [01m[K/opt/ros/foxy/include/lifecycle_msgs/msg/detail/state__struct.hpp:26:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Klifecycle_msgs::msg[m[K’
+[1.635s]    26 | namespace [01;36m[Kmsg[m[K
+[1.635s]       |           [01;36m[K^~~[m[K
+[1.635s] In file included from [01m[K/opt/ros/foxy/include/std_msgs/msg/float64.hpp:7[m[K,
+[1.635s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:21[m[K,
+[1.636s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15[m[K:
+[1.636s] [01m[K/opt/ros/foxy/include/std_msgs/msg/detail/float64__struct.hpp:26:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstd_msgs::msg[m[K’
+[1.637s]    26 | namespace [01;36m[Kmsg[m[K
+[1.637s]       |           [01;36m[K^~~[m[K
+[1.637s] In file included from [01m[K/opt/ros/foxy/include/builtin_interfaces/msg/duration.hpp:7[m[K,
+[1.637s]                  from [01m[K/opt/ros/foxy/include/rclcpp/duration.hpp:20[m[K,
+[1.638s]                  from [01m[K/opt/ros/foxy/include/rclcpp/qos.hpp:20[m[K,
+[1.638s]                  from [01m[K/opt/ros/foxy/include/rclcpp/node_interfaces/node_graph_interface.hpp:31[m[K,
+[1.638s]                  from [01m[K/opt/ros/foxy/include/rclcpp/client.hpp:34[m[K,
+[1.638s]                  from [01m[K/opt/ros/foxy/include/rclcpp/callback_group.hpp:23[m[K,
+[1.638s]                  from [01m[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:20[m[K,
+[1.638s]                  from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24[m[K,
+[1.639s]                  from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18[m[K,
+[1.639s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20[m[K,
+[1.639s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executor.hpp:33[m[K,
+[1.639s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26[m[K,
+[1.639s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:21[m[K,
+[1.640s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+[1.640s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:23[m[K,
+[1.640s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15[m[K:
+[1.640s] [01m[K/opt/ros/foxy/include/builtin_interfaces/msg/detail/duration__struct.hpp:26:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kbuiltin_interfaces::msg[m[K’
+[1.641s]    26 | namespace [01;36m[Kmsg[m[K
+[1.641s]       |           [01;36m[K^~~[m[K
+[1.641s] In file included from [01m[K/opt/ros/foxy/include/statistics_msgs/msg/detail/metrics_message__struct.hpp:22[m[K,
+[1.641s]                  from [01m[K/opt/ros/foxy/include/statistics_msgs/msg/metrics_message.hpp:7[m[K,
+[1.642s]                  from [01m[K/opt/ros/foxy/include/libstatistics_collector/collector/generate_statistics_message.hpp:21[m[K,
+[1.642s]                  from [01m[K/opt/ros/foxy/include/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23[m[K,
+[1.642s]                  from [01m[K/opt/ros/foxy/include/rclcpp/subscription.hpp:50[m[K,
+[1.642s]                  from [01m[K/opt/ros/foxy/include/rclcpp/any_executable.hpp:25[m[K,
+[1.643s]                  from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategy.hpp:24[m[K,
+[1.643s]                  from [01m[K/opt/ros/foxy/include/rclcpp/memory_strategies.hpp:18[m[K,
+[1.643s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executor_options.hpp:20[m[K,
+[1.643s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executor.hpp:33[m[K,
+[1.643s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors/multi_threaded_executor.hpp:26[m[K,
+[1.644s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:21[m[K,
+[1.644s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+[1.644s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:23[m[K,
+[1.645s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15[m[K:
+[1.645s] [01m[K/opt/ros/foxy/include/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:26:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstatistics_msgs::msg[m[K’
+[1.645s]    26 | namespace [01;36m[Kmsg[m[K
+[1.645s]       |           [01;36m[K^~~[m[K
+[1.645s] In file included from [01m[K/opt/ros/foxy/include/rcl_interfaces/msg/list_parameters_result.hpp:7[m[K,
+[1.646s]                  from [01m[K/opt/ros/foxy/include/rclcpp/node.hpp:34[m[K,
+[1.646s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[1.646s]                  from [01m[K/opt/ros/foxy/include/rclcpp/executors.hpp:22[m[K,
+[1.646s]                  from [01m[K/opt/ros/foxy/include/rclcpp/rclcpp.hpp:146[m[K,
+[1.647s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:23[m[K,
+[1.647s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15[m[K:
+[1.647s] [01m[K/opt/ros/foxy/include/rcl_interfaces/msg/detail/list_parameters_result__struct.hpp:26:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Krcl_interfaces::msg[m[K’
+[1.647s]    26 | namespace [01;36m[Kmsg[m[K
+[1.648s]       |           [01;36m[K^~~[m[K
+[1.648s] In file included from [01m[K/opt/ros/foxy/include/geometry_msgs/msg/detail/twist__struct.hpp:20[m[K,
+[1.648s]                  from [01m[K/opt/ros/foxy/include/geometry_msgs/msg/twist.hpp:7[m[K,
+[1.648s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:25[m[K,
+[1.648s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15[m[K:
+[1.649s] [01m[K/opt/ros/foxy/include/geometry_msgs/msg/detail/vector3__struct.hpp:26:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kgeometry_msgs::msg[m[K’
+[1.649s]    26 | namespace [01;36m[Kmsg[m[K
+[1.649s]       |           [01;36m[K^~~[m[K
+[1.649s] In file included from [01m[K/opt/ros/foxy/include/sensor_msgs/msg/laser_scan.hpp:7[m[K,
+[1.649s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:29[m[K,
+[1.650s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15[m[K:
+[1.650s] [01m[K/opt/ros/foxy/include/sensor_msgs/msg/detail/laser_scan__struct.hpp:30:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Ksensor_msgs::msg[m[K’
+[1.650s]    30 | namespace [01;36m[Kmsg[m[K
+[1.650s]       |           [01;36m[K^~~[m[K
+[1.650s] In file included from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15[m[K:
+[1.651s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:75:41:[m[K [01;31m[Kerror: [m[K‘[01m[KLaserScan[m[K’ was not declared in this scope; did you mean ‘[01m[Ksensor_msgs::msg::LaserScan[m[K’?
+[1.651s]    75 |     rclcpp::Subscription<ensor_msgs/msg/[01;31m[KLaserScan[m[K>::SharedPtr lasersub_;
+[1.651s]       |                                         [01;31m[K^~~~~~~~~[m[K
+[1.651s]       |                                         [32m[Ksensor_msgs::msg::LaserScan[m[K
+[1.652s] In file included from [01m[K/opt/ros/foxy/include/sensor_msgs/msg/laser_scan.hpp:7[m[K,
+[1.652s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:29[m[K,
+[1.652s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15[m[K:
+[1.652s] [01m[K/opt/ros/foxy/include/sensor_msgs/msg/detail/laser_scan__struct.hpp:246:7:[m[K [01;36m[Knote: [m[K‘[01m[Ksensor_msgs::msg::LaserScan[m[K’ declared here
+[1.652s]   246 | using [01;36m[KLaserScan[m[K =
+[1.652s]       |       [01;36m[K^~~~~~~~~[m[K
+[1.652s] In file included from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15[m[K:
+[1.653s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:75:50:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.653s]    75 |     rclcpp::Subscription<ensor_msgs/msg/LaserScan[01;31m[K>[m[K::SharedPtr lasersub_;
+[1.653s]       |                                                  [01;31m[K^[m[K
+[1.654s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:75:50:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[1.654s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:75:53:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[1.654s]    75 |     rclcpp::Subscription<ensor_msgs/msg/LaserScan>::[01;31m[KSharedPtr[m[K lasersub_;
+[1.654s]       |                                                     [01;31m[K^~~~~~~~~[m[K
+[1.654s]       |                                                              [32m[K;[m[K
+[1.654s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:75:63:[m[K [01;31m[Kerror: [m[K‘[01m[Klasersub_[m[K’ does not name a type
+[1.654s]    75 |     rclcpp::Subscription<ensor_msgs/msg/LaserScan>::SharedPtr [01;31m[Klasersub_[m[K;
+[1.654s]       |                                                               [01;31m[K^~~~~~~~~[m[K
+[1.654s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:[m[K In constructor ‘[01m[KLCNcalc_dir::LCNcalc_dir()[m[K’:
+[1.655s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:43:5:[m[K [01;31m[Kerror: [m[K‘[01m[Klasersub_[m[K’ was not declared in this scope
+[1.655s]    43 |     [01;31m[Klasersub_[m[K = create_subscription<sensor_msgs/msg/LaserScan>(
+[1.655s]       |     [01;31m[K^~~~~~~~~[m[K
+[1.656s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:43:17:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+[1.656s]    43 |     lasersub_ = [01;31m[Kcreate_subscription<sensor_msgs/msg/LaserScan>[m[K(
+[1.656s]       |                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.656s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:44:66:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KLCNcalc_dir::create_subscription<<expression error> >(const char [9], int, std::_Bind_helper<false, void (LCNcalc_dir::*)(std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > >), LCNcalc_dir*, const std::_Placeholder<1>&>::type)[m[K’
+[1.656s]    44 |       "scan_raw", 10, std::bind(&LCNcalc_dir::callback, this, _1)[01;31m[K)[m[K;
+[1.663s]       |                                                                  [01;31m[K^[m[K
+[1.663s] In file included from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:24[m[K,
+[1.663s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15[m[K:
+[1.663s] [01m[K/opt/ros/foxy/include/rclcpp_lifecycle/lifecycle_node.hpp:230:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class CallbackMessageT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<SubscriptionT> rclcpp_lifecycle::LifecycleNode::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+[1.663s]   230 |   [01;36m[Kcreate_subscription[m[K(
+[1.664s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[1.664s] [01m[K/opt/ros/foxy/include/rclcpp_lifecycle/lifecycle_node.hpp:230:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[1.664s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:44:66:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.665s]    44 |       "scan_raw", 10, std::bind(&LCNcalc_dir::callback, this, _1)[01;31m[K)[m[K;
+[1.665s]       |                                                                  [01;31m[K^[m[K
+[1.665s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:[m[K At global scope:
+[1.665s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:100:14:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[Kvoid[m[K’
+[1.666s]   100 | LCNcalc_dir::[01;31m[Kvoid[m[K callback(const sensor_msgs::msg::LaserScan::SharedPtr msg) const
+[1.666s]       |              [01;31m[K^~~~[m[K
+[2.458s] make[2]: *** [CMakeFiles/follow_wall_lifecycle.dir/build.make:63: CMakeFiles/follow_wall_lifecycle.dir/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp.o] Error 1
+[2.459s] make[1]: *** [CMakeFiles/Makefile2:148: CMakeFiles/follow_wall_lifecycle.dir/all] Error 2
+[2.459s] make: *** [Makefile:141: all] Error 2
+[2.461s] Invoked command in '/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/build/follow-wall' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/alumnos/acmp/colcon_ws/install/ros2controlcli:/home/alumnos/acmp/colcon_ws/install/launch_pal:/home/alumnos/acmp/colcon_ws/install/intro_py_ros2:/opt/ros/foxy /usr/bin/cmake --build /home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/build/follow-wall -- -j4 -l4

@@ -1,0 +1,52 @@
+[0.150s] Invoking command in '/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/build/follow-wall': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/alumnos/acmp/colcon_ws/install/ros2controlcli:/home/alumnos/acmp/colcon_ws/install/launch_pal:/home/alumnos/acmp/colcon_ws/install/intro_py_ros2:/opt/ros/foxy /usr/bin/cmake --build /home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/build/follow-wall -- -j4 -l4
+[0.315s] [35m[1mScanning dependencies of target follow_wall_lifecycle[0m
+[0.341s] [ 40%] Built target gtest_main
+[0.342s] [ 40%] Built target gtest
+[0.394s] make[2]: Atención: El archivo 'CMakeFiles/follow_wall_lifecycle.dir/depend.make' tiene una hora de modificación 0,052 s en el futuro
+[0.446s] [ 50%] [32mBuilding CXX object CMakeFiles/follow_wall_lifecycle.dir/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp.o[0m
+[1.678s] In file included from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15[m[K:
+[1.679s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:75:51:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.679s]    75 |     rclcpp::Subscription<sensor_msgs/msg/LaserScan[01;31m[K>[m[K::SharedPtr lasersub_;
+[1.679s]       |                                                   [01;31m[K^[m[K
+[1.680s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:75:51:[m[K [01;31m[Kerror: [m[Ktemplate argument 3 is invalid
+[1.680s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:75:54:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[1.680s]    75 |     rclcpp::Subscription<sensor_msgs/msg/LaserScan>::[01;31m[KSharedPtr[m[K lasersub_;
+[1.680s]       |                                                      [01;31m[K^~~~~~~~~[m[K
+[1.681s]       |                                                               [32m[K;[m[K
+[1.681s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:75:64:[m[K [01;31m[Kerror: [m[K‘[01m[Klasersub_[m[K’ does not name a type
+[1.681s]    75 |     rclcpp::Subscription<sensor_msgs/msg/LaserScan>::SharedPtr [01;31m[Klasersub_[m[K;
+[1.681s]       |                                                                [01;31m[K^~~~~~~~~[m[K
+[1.685s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:[m[K In constructor ‘[01m[KLCNcalc_dir::LCNcalc_dir()[m[K’:
+[1.686s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:43:5:[m[K [01;31m[Kerror: [m[K‘[01m[Klasersub_[m[K’ was not declared in this scope
+[1.686s]    43 |     [01;31m[Klasersub_[m[K = create_subscription<sensor_msgs/msg/LaserScan>(
+[1.686s]       |     [01;31m[K^~~~~~~~~[m[K
+[1.687s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:43:17:[m[K [01;31m[Kerror: [m[Kparse error in template argument list
+[1.687s]    43 |     lasersub_ = [01;31m[Kcreate_subscription<sensor_msgs/msg/LaserScan>[m[K(
+[1.687s]       |                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.692s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:44:66:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KLCNcalc_dir::create_subscription<<expression error> >(const char [9], int, std::_Bind_helper<false, void (LCNcalc_dir::*)(std::shared_ptr<sensor_msgs::msg::LaserScan_<std::allocator<void> > >), LCNcalc_dir*, const std::_Placeholder<1>&>::type)[m[K’
+[1.693s]    44 |       "scan_raw", 10, std::bind(&LCNcalc_dir::callback, this, _1)[01;31m[K)[m[K;
+[1.693s]       |                                                                  [01;31m[K^[m[K
+[1.693s] In file included from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:24[m[K,
+[1.693s]                  from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15[m[K:
+[1.694s] [01m[K/opt/ros/foxy/include/rclcpp_lifecycle/lifecycle_node.hpp:230:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class CallbackT, class AllocatorT, class CallbackMessageT, class SubscriptionT, class MessageMemoryStrategyT> std::shared_ptr<SubscriptionT> rclcpp_lifecycle::LifecycleNode::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename MessageMemoryStrategyT::SharedPtr)[m[K’
+[1.694s]   230 |   [01;36m[Kcreate_subscription[m[K(
+[1.694s]       |   [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[1.694s] [01m[K/opt/ros/foxy/include/rclcpp_lifecycle/lifecycle_node.hpp:230:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[1.694s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:44:66:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[1.695s]    44 |       "scan_raw", 10, std::bind(&LCNcalc_dir::callback, this, _1)[01;31m[K)[m[K;
+[1.695s]       |                                                                  [01;31m[K^[m[K
+[1.705s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:[m[K At global scope:
+[1.705s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:100:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid LCNcalc_dir::callback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr) const[m[K’
+[1.705s]   100 | void [01;31m[KLCNcalc_dir[m[K::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg) const
+[1.705s]       |      [01;31m[K^~~~~~~~~~~[m[K
+[1.705s] In file included from [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp:15[m[K:
+[1.706s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:88:10:[m[K [01;36m[Knote: [m[Kcandidate is: ‘[01m[Kvoid LCNcalc_dir::callback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’
+[1.706s]    88 |     void [01;36m[Kcallback[m[K(const sensor_msgs::msg::LaserScan::SharedPtr msg);
+[1.706s]       |          [01;36m[K^~~~~~~~[m[K
+[1.706s] [01m[K/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/include/follow_wall_lifecycle/follow_wall_lifecycle.hpp:67:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass LCNcalc_dir[m[K’ defined here
+[1.706s]    67 | class [01;36m[KLCNcalc_dir[m[K : public rclcpp_lifecycle::LifecycleNode
+[1.707s]       |       [01;36m[K^~~~~~~~~~~[m[K
+[2.497s] make[2]: *** [CMakeFiles/follow_wall_lifecycle.dir/build.make:63: CMakeFiles/follow_wall_lifecycle.dir/src/follow_wall_lifecycle/follow_wall_lifecycle.cpp.o] Error 1
+[2.498s] make[1]: *** [CMakeFiles/Makefile2:148: CMakeFiles/follow_wall_lifecycle.dir/all] Error 2
+[2.498s] make: *** [Makefile:141: all] Error 2
+[2.499s] Invoked command in '/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/build/follow-wall' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/alumnos/acmp/colcon_ws/install/ros2controlcli:/home/alumnos/acmp/colcon_ws/install/launch_pal:/home/alumnos/acmp/colcon_ws/install/intro_py_ros2:/opt/ros/foxy /usr/bin/cmake --build /home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/build/follow-wall -- -j4 -l4

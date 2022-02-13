@@ -1,0 +1,3 @@
+[35m[1mScanning dependencies of target engine_node[0m
+[ 50%] Built target calculate_direction
+[ 75%] [32mBuilding CXX object CMakeFiles/engine_node.dir/src/follow-wall/engine_node.cpp.o[0m

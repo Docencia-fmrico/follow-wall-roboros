@@ -43,7 +43,7 @@ public:
     //sub_ = create_subscription<std_msgs::msg::Int32>(
       //"laser_info", 10, std::bind(&EngineNode::callback, this, _1));
     lasersub_ = create_subscription<sensor_msgs/msg/LaserScan>(
-      "scan_raw", 10, std::bind(&EngineNode::callback, this, _1));
+      "scan_raw", 10, std::bind(&LifecycleNode::callback, this, _1));
   }
 
   void doWork()

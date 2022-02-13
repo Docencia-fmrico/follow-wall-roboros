@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/build/follow-wall/libfollow_wall_lifecycle.so" "/home/alumnos/acmp/colcon_ws/src/follow-wall-roboros/build/follow-wall/follow-wall" "TARGETS" "follow_wall_lifecycle" "follow-wall" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "lib/follow-wall")
