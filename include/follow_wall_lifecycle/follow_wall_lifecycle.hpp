@@ -72,7 +72,7 @@ public:
     rclcpp_lifecycle::LifecyclePublisher<std_msgs::msg::Float64>::SharedPtr pub_;
     rclcpp_lifecycle::LifecyclePublisher<geometry_msgs::msg::Twist>::SharedPtr twist_pub_;
 
-    rclcpp::Subscription<sensor_msgs::msg::LaserScan::SharedPtr> lasersub_;
+    rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr lasersub_;
 
     geometry_msgs::msg::Twist generate_twist_msg(enum actions action);
 
