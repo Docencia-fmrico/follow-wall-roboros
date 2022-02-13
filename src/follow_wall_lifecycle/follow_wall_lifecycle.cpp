@@ -115,10 +115,10 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
   float32[] intensities        # intensity data [device-specific units].  If your
                               # device does not provide intensities, please leave
                               # the array empty.*/
-  RCLCPP_INFO("I heard: [%d]",msg);
-  int areasize=(rad2degr(msg.angle_max)-rad2degr(msg.angle_min))/LASERPARTITION;
-  int iterations_per_size=sizeof(msg.ranges)/sizeof(msg.ranges[0])/LASERPARTITION;
-  float semicircle_half=(msg.range_max-msg.range_min)/2;
+  //RCLCPP_INFO("I heard: [%d]",msg);
+  int areasize=(rad2degr(msg->angle_max)-rad2degr(msg->angle_min))/LASERPARTITION;
+  int iterations_per_size=sizeof(msg->ranges)/sizeof(msg->ranges[0])/LASERPARTITION;
+  float semicircle_half=(msg->range_max-msg->range_min)/2;
   for(int i=0;i<LASERPARTITION;i++){
     //intial pointer
     int first_zone_range=iterations_per_size*i;
@@ -127,8 +127,8 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
     int counterN = 0;
     for(int a=0;a<iterations_per_size;a++){
       //dsicard out of range values
-      if(msg.ranges[first_zone_range+a]>=msg.range_min && msg.ranges[first_zone_range+a]<=msg.range_max){
-        if(msg.ranges[first_zone_range+a]>semicircle_half){
+      if(msg->ranges[first_zone_range+a]>=msg->range_min && msg->ranges[first_zone_range+a]<=msg->range_max){
+        if(msg->ranges[first_zone_range+a]>semicircle_half){
           //far aside part
           counterF++;
         }else{
