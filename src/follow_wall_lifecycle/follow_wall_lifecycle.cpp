@@ -18,7 +18,7 @@ int rad2degr(float rad){
     return rad*(180/3.1416);
 }
 
-enum actions decide_action(struct laserscan_result laser){
+enum actions LCNcalc_dir::decide_action(struct laserscan_result laser){
   //avoid colisions
   if(laser.data[RIGHT_NEAR]){
     return TURN_LEFT;
@@ -96,9 +96,18 @@ void LCNcalc_dir::do_work()
         laser_res.data[RIGHT_FAR]=average_side_values[0][0];
         laser_res.data[FRONT_FAR]=average_side_values[1][0];
         laser_res.data[LEFT_FAR]=average_side_values[2][0];
+
+
+        RCLCPP_INFO(get_logger(), "RIGHT_NEAR %d", laser_res.data[RIGHT_NEAR]);
+        RCLCPP_INFO(get_logger(), "FRONT_NEAR %d", laser_res.data[FRONT_NEAR]);
+        RCLCPP_INFO(get_logger(), "LEFT_NEAR %d", laser_res.data[LEFT_NEAR]);
+        RCLCPP_INFO(get_logger(), "RIGHT_FAR %d", laser_res.data[RIGHT_FAR]);
+        RCLCPP_INFO(get_logger(), "FRONT_FAR %d", laser_res.data[FRONT_FAR]);
+        RCLCPP_INFO(get_logger(), "LEFT_FAR %d", laser_res.data[LEFT_FAR]);
+
         RCLCPP_INFO(get_logger(), "Do work");
-        generate_twist_msg(TURN_LEFT);
-        twist_pub_->publish(generate_twist_msg(CONTINUE));
+        
+        //twist_pub_->publish(generate_twist_msg(decide_action(laser_res)));
     }
 }
 
@@ -144,7 +153,6 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
     average_side_values[i][0]=counterF;
     average_side_values[i][1]=counterN;
   }
-                              
 }
 
 geometry_msgs::msg::Twist LCNcalc_dir::generate_twist_msg(enum actions action){

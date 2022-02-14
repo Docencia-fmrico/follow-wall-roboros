@@ -86,6 +86,7 @@ public:
     CallbackReturnT on_error(const rclcpp_lifecycle::State & state);
     void do_work();
     void callback(const sensor_msgs::msg::LaserScan::SharedPtr msg);
+    enum actions decide_action(struct laserscan_result laser);
 };
 
 #endif  //FOLLOW_WALL_LIFECYCLE_HPP_
