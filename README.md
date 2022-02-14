@@ -17,4 +17,26 @@ Las zonas graficamente se verian tal que asi. Seria una combinacion entre derech
 
 Con eso, usando un valor como referencia vamos a ver si ha detectado los suficientes puntos en cada zona para tenerla en cuenta a la hora de tomar una decisión
 
-//tengo q continuar...
+## Publicando la velocidad
+
+Una vez evaluamos la info del laser lo que hacemos es publicar la velocidad a través de un algoritmo basado en casos, que deciden el valor del topic que recibira TiaGo para la velocidad.
+
+enum actions
+{
+  TURN_RIGHT,
+  TURN_LEFT,
+  MOVING_TURN_RIGHT,
+  MOVING_TURN_LEFT,
+  CONTINUE,
+  STOP
+};
+
+## Estructura del nodo
+ 
+El programa se basa en un único nodo lifecycle que es el que se suscribe al laser y publica la velocidad
+
+
+//continua...
+
+
+
