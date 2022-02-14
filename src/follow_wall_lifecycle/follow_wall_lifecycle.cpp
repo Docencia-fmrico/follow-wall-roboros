@@ -18,7 +18,133 @@ int rad2degr(float rad){
     return rad*(180/3.1416);
 }
 
+/*
+    if laser.data[FRONT_NEAR] > d and regions['fleft'] > d and regions['fright'] > d:
+        state_description = 'case 1 - nothing'
+        change_state(0)
+    elif laser.data[FRONT_NEAR] < d and regions['fleft'] > d and regions['fright'] > d:
+        state_description = 'case 2 - front'
+        return TURN_LEFT;
+    elif laser.data[FRONT_NEAR] > d and regions['fleft'] > d and regions['fright'] < d:
+        state_description = 'case 3 - fright'
+        change_state(2)
+    elif laser.data[FRONT_NEAR] > d and regions['fleft'] < d and regions['fright'] > d:
+        state_description = 'case 4 - fleft'
+        change_state(0)
+    elif laser.data[FRONT_NEAR] < d and regions['fleft'] > d and regions['fright'] < d:
+        state_description = 'case 5 - front and fright'
+        return TURN_LEFT;
+    elif laser.data[FRONT_NEAR] < d and regions['fleft'] < d and regions['fright'] > d:
+        state_description = 'case 6 - front and fleft'
+        return TURN_LEFT;
+    elif laser.data[FRONT_NEAR] < d and regions['fleft'] < d and regions['fright'] < d:
+        state_description = 'case 7 - front and fleft and fright'
+        return TURN_LEFT;
+    elif laser.data[FRONT_NEAR] > d and regions['fleft'] < d and regions['fright'] < d:
+        state_description = 'case 8 - fleft and fright'
+        change_state(0)
+    else:
+        state_description = 'unknown case'
+        rospy.loginfo(regions)
+*/
+
 enum actions LCNcalc_dir::decide_action(struct laserscan_result laser){
+    int d=5;
+    
+    if(laser.data[FRONT_NEAR] > d || laser.data[LEFT_NEAR] > d || laser.data[RIGHT_NEAR] > d){
+      RCLCPP_INFO(get_logger(), "algo cerca-alejate");
+      
+      if(laser.data[FRONT_NEAR] > d){
+        RCLCPP_INFO(get_logger(), "girando derecha");
+        return TURN_RIGHT;
+        
+      }
+      if(laser.data[LEFT_NEAR] > d){
+        RCLCPP_INFO(get_logger(), "girando derecha");
+        return MOVING_TURN_RIGHT;
+      }
+      RCLCPP_INFO(get_logger(), "girando izquierda");
+      return MOVING_TURN_LEFT;
+    }
+
+    if(!(laser.data[FRONT_FAR] > d) && !(laser.data[LEFT_FAR] > d) && !(laser.data[RIGHT_FAR] > d)){
+      RCLCPP_INFO(get_logger(), "nada lejos, quizas has perdido la pared gira a la izquierda");
+      return MOVING_TURN_LEFT;
+    }
+
+    if(!(laser.data[FRONT_FAR] > d) && (laser.data[LEFT_FAR] > d) && !(laser.data[RIGHT_FAR] > d)){
+      RCLCPP_INFO(get_logger(), "solo a la izq, acercate a la pared");
+      return MOVING_TURN_LEFT;
+    }
+    if((laser.data[FRONT_FAR] > d) && !(laser.data[LEFT_FAR] > d) && !(laser.data[RIGHT_FAR] > d)){
+      RCLCPP_INFO(get_logger(), "solo de frente, avanza hacia el obstaculo");
+      return CONTINUE;
+    }
+    if(!(laser.data[FRONT_FAR] > d) && !(laser.data[LEFT_FAR] > d) && (laser.data[RIGHT_FAR] > d)){
+      RCLCPP_INFO(get_logger(), "obstaculo a la derecha! gira para ir hacia el");
+      return TURN_RIGHT;
+    }
+
+    if((laser.data[FRONT_FAR] > d) && (laser.data[LEFT_FAR] > d) && !(laser.data[RIGHT_FAR] > d)){
+      RCLCPP_INFO(get_logger(), "de frente izquierda, sigue");
+      return CONTINUE;
+    }
+    if((laser.data[FRONT_FAR] > d) && !(laser.data[LEFT_FAR] > d) && (laser.data[RIGHT_FAR] > d)){
+      RCLCPP_INFO(get_logger(), "de frente derecha, como hemos llegado aqui? gira hasta poner obstaculo de frente");
+      return TURN_RIGHT;
+    }
+    if(!(laser.data[FRONT_FAR] > d) && (laser.data[LEFT_FAR] > d) && (laser.data[RIGHT_FAR] > d)){
+      RCLCPP_INFO(get_logger(), "a ambos lados, como??? continua pero acercate a la pared de izq");
+      return MOVING_TURN_LEFT;
+    }
+
+    if((laser.data[FRONT_FAR] > d) && (laser.data[LEFT_FAR] > d) && (laser.data[RIGHT_FAR] > d)){
+      RCLCPP_INFO(get_logger(), "a todos lados, gira hacia la izquierda para acercarte al obstaculo");
+      return MOVING_TURN_LEFT;
+    }
+    
+    RCLCPP_INFO(get_logger(), "algo raro");
+    return MOVING_TURN_LEFT;
+
+
+
+    /*
+    if(laser.data[FRONT_NEAR] < d && laser.data[LEFT_FAR] < d && laser.data[RIGHT_FAR] < d){
+      //'case 1 - nothing'
+    }
+    else if(laser.data[FRONT_NEAR] > d && laser.data[LEFT_FAR] < d && laser.data[RIGHT_FAR] < d){
+      //'case 2 - front'
+      return TURN_LEFT;
+    }
+    else if( laser.data[FRONT_NEAR] < d && laser.data[LEFT_FAR] < d && laser.data[RIGHT_FAR] > d){
+      //'case 3 - fright'
+      return CONTINUE;
+    }
+    else if( laser.data[FRONT_NEAR] < d && laser.data[LEFT_FAR] > d && laser.data[RIGHT_FAR] < d){
+      //'case 4 - fleft'
+      return CONTINUE;
+    }
+    else if( laser.data[FRONT_NEAR] > d && laser.data[LEFT_FAR] < d && laser.data[RIGHT_FAR] > d){
+      //'case 5 - front and fright'
+      return TURN_LEFT;
+    }
+    else if( laser.data[FRONT_NEAR] > d && laser.data[LEFT_FAR] > d && laser.data[RIGHT_FAR] < d){
+      //'case 6 - front and fleft'
+      return TURN_LEFT;
+    }
+    else if( laser.data[FRONT_NEAR] > d && laser.data[LEFT_FAR] > d && laser.data[RIGHT_FAR] > d){
+      //'case 7 - front and fleft and fright'
+      return TURN_LEFT;
+    }
+    else if( laser.data[FRONT_NEAR] < d && laser.data[LEFT_FAR] > d && laser.data[RIGHT_FAR] > d){
+      //'case 8 - fleft and fright'
+      return CONTINUE;
+    }
+    //'unknown case'
+    return STOP;
+    
+
+  
   //avoid colisions
   if(laser.data[RIGHT_NEAR]){
     return TURN_LEFT;
@@ -35,6 +161,7 @@ enum actions LCNcalc_dir::decide_action(struct laserscan_result laser){
   }
   //search wall
   return MOVING_TURN_RIGHT;
+  */
 }
 
 LCNcalc_dir::LCNcalc_dir() : rclcpp_lifecycle::LifecycleNode("follow_wall_node"){
@@ -107,7 +234,7 @@ void LCNcalc_dir::do_work()
 
         RCLCPP_INFO(get_logger(), "Do work");
         
-        //twist_pub_->publish(generate_twist_msg(decide_action(laser_res)));
+        twist_pub_->publish(generate_twist_msg(decide_action(laser_res)));
     }
 }
 
@@ -165,19 +292,19 @@ geometry_msgs::msg::Twist LCNcalc_dir::generate_twist_msg(enum actions action){
   {
   case TURN_RIGHT:
     msg.linear.x = 0;
-    msg.angular.z = angular_v;
+    msg.angular.z = -angular_v;
     break;
   case TURN_LEFT:
     msg.linear.x = 0;
-    msg.angular.z = -angular_v;
+    msg.angular.z = angular_v;
     break;
   case MOVING_TURN_RIGHT:
     msg.linear.x = linear_v;
-    msg.angular.z = angular_v;
+    msg.angular.z = -angular_v;
     break;
   case MOVING_TURN_LEFT:
     msg.linear.x = linear_v;
-    msg.angular.z = -angular_v;
+    msg.angular.z = angular_v;
     break;
   case CONTINUE:
     msg.linear.x = linear_v;
