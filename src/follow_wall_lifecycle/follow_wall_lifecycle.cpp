@@ -130,7 +130,9 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
                               # device does not provide intensities, please leave
                               # the array empty.*/
   //RCLCPP_INFO("I heard: [%d]",msg);
-  int iterations_per_size=sizeof(msg->ranges)/sizeof(msg->ranges[0])/LASERPARTITION;
+  //int iterations_per_size=sizeof(msg->ranges)/sizeof(msg->ranges[0])/LASERPARTITION;
+  //int iterations_per_size=(msg->angle_max-msg->angle_min)/msg->angle_increment;
+  int iterations_per_size=msg->ranges.size();
   float semicircle_half=(msg->range_max-msg->range_min)/2;
   for(int i=0;i<LASERPARTITION;i++){
     //intial pointer
