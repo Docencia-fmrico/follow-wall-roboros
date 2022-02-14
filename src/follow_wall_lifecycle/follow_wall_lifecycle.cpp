@@ -130,9 +130,10 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
                               # device does not provide intensities, please leave
                               # the array empty.*/
   //RCLCPP_INFO("I heard: [%d]",msg);
-  //int iterations_per_size=sizeof(msg->ranges)/sizeof(msg->ranges[0])/LASERPARTITION;
-  //int iterations_per_size=(msg->angle_max-msg->angle_min)/msg->angle_increment;
-  int iterations_per_size=msg->ranges.size();
+  int iterations_per_size=msg->ranges.size()/LASERPARTITION;
+  RCLCPP_INFO(get_logger(), "iterations %d", iterations_per_size);
+
+
   float semicircle_half=(msg->range_max-msg->range_min)/2;
   for(int i=0;i<LASERPARTITION;i++){
     //intial pointer
@@ -141,6 +142,7 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
     int counterF=0;
     int counterN = 0;
     for(int a=0;a<iterations_per_size;a++){
+      RCLCPP_INFO(get_logger(), "a= %d", first_zone_range+a);
       //dsicard out of range values
       if(msg->ranges[first_zone_range+a]>=msg->range_min && msg->ranges[first_zone_range+a]<=msg->range_max){
         if(msg->ranges[first_zone_range+a]>semicircle_half){
@@ -151,6 +153,7 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
           counterN++;
         }
       }
+      
     }
     average_side_values[i][0]=counterF;
     average_side_values[i][1]=counterN;
