@@ -1,3 +1,4 @@
+// "Copyright [2022] <Copyright RoboRos Group>"
 // RoboRos group
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,6 +13,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#include <memory>
 #include "follow_wall_lifecycle/follow_wall_lifecycle.hpp"
 
 int main(int argc, char * argv[])

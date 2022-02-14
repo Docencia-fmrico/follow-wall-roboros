@@ -1,3 +1,4 @@
+// "Copyright [2022] <Copyright RoboRos Group>"
 // RoboRos group
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -11,9 +12,8 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
-#ifndef FOLLOW_WALL_LIFECYCLE_HPP_
-#define FOLLOW_WALL_LIFECYCLE_HPP_
+#ifndef FOLLOW_WALL_LIFECYCLE__FOLLOW_WALL_LIFECYCLE_HPP_
+#define FOLLOW_WALL_LIFECYCLE__FOLLOW_WALL_LIFECYCLE_HPP_
 
 #include <memory>
 
@@ -32,7 +32,8 @@
 using rcl_interfaces::msg::ParameterType;
 using std::placeholders::_1;
 
-enum actions{
+enum actions
+{
   TURN_RIGHT,
   TURN_LEFT,
   MOVING_TURN_RIGHT,
@@ -41,11 +42,13 @@ enum actions{
   STOP
 };
 
-enum{
-  LASERPARTITION=3
+enum
+{
+  LASERPARTITION = 3
 };
 
-enum sectors{
+enum sectors
+{
   RIGHT_NEAR,
   FRONT_NEAR,
   LEFT_NEAR,
@@ -54,8 +57,9 @@ enum sectors{
   LEFT_FAR
 };
 
-struct laserscan_result{
-  int data[6];//primero los 3 sectores cercanos en sentido antihorario, despues 3 sectores lejanos antihorario
+struct laserscan_result
+{
+  int data[6];  // primero los 3 sectores cercanos en sentido antihorario, despues 3 lejanos
 };
 
 const float angular_v=0.6;
@@ -64,32 +68,31 @@ const float linear_v=0.3;
 const float near_limit=0.55;
 const float far_limit=1;
 
+
 using CallbackReturnT = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn;
 
 
 class LCNcalc_dir : public rclcpp_lifecycle::LifecycleNode
 {
 public:
-    double speed_;
-    float average_side_values[LASERPARTITION][2];
-    rclcpp_lifecycle::LifecyclePublisher<std_msgs::msg::Float64>::SharedPtr pub_;
-    rclcpp_lifecycle::LifecyclePublisher<geometry_msgs::msg::Twist>::SharedPtr twist_pub_;
-
-    rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr lasersub_;
-
-    geometry_msgs::msg::Twist generate_twist_msg(enum actions action);
+  double speed_;
+  float average_side_values[LASERPARTITION][2];
+  rclcpp_lifecycle::LifecyclePublisher<std_msgs::msg::Float64>::SharedPtr pub_;
+  rclcpp_lifecycle::LifecyclePublisher<geometry_msgs::msg::Twist>::SharedPtr twist_pub_;
+  rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr lasersub_;
+  geometry_msgs::msg::Twist generate_twist_msg(enum actions action);
 
 public:
-    LCNcalc_dir();
-    CallbackReturnT on_configure(const rclcpp_lifecycle::State & state);
-    CallbackReturnT on_activate(const rclcpp_lifecycle::State & state);
-    CallbackReturnT on_deactivate(const rclcpp_lifecycle::State & state);
-    CallbackReturnT on_cleanup(const rclcpp_lifecycle::State & state);
-    CallbackReturnT on_shutdown(const rclcpp_lifecycle::State & state);
-    CallbackReturnT on_error(const rclcpp_lifecycle::State & state);
-    void do_work();
-    void callback(const sensor_msgs::msg::LaserScan::SharedPtr msg);
-    enum actions decide_action(struct laserscan_result laser);
+  LCNcalc_dir();
+  CallbackReturnT on_configure(const rclcpp_lifecycle::State & state);
+  CallbackReturnT on_activate(const rclcpp_lifecycle::State & state);
+  CallbackReturnT on_deactivate(const rclcpp_lifecycle::State & state);
+  CallbackReturnT on_cleanup(const rclcpp_lifecycle::State & state);
+  CallbackReturnT on_shutdown(const rclcpp_lifecycle::State & state);
+  CallbackReturnT on_error(const rclcpp_lifecycle::State & state);
+  void do_work();
+  void callback(const sensor_msgs::msg::LaserScan::SharedPtr msg);
+  enum actions decide_action(struct laserscan_result laser);
 };
 
-#endif  //FOLLOW_WALL_LIFECYCLE_HPP_
+#endif  //  FOLLOW_WALL_LIFECYCLE__FOLLOW_WALL_LIFECYCLE_HPP_

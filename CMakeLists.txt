@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(follow-wall)
+project(follow_wall)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -26,7 +26,7 @@ find_package(geometry_msgs REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 
 
-set(dependencies 
+set(dependencies
   rclcpp
   std_msgs
   sensor_msgs
@@ -60,12 +60,11 @@ target_link_libraries(follow-wall follow_wall_lifecycle)
 
 
 install(TARGETS
-  #calculate_direction 
+  #calculate_direction
   #engine_node
   #lifecycle_node
   follow_wall_lifecycle
   follow-wall
-  
 
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
