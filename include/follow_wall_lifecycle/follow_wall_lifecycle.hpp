@@ -62,8 +62,12 @@ struct laserscan_result
   int data[6];  // primero los 3 sectores cercanos en sentido antihorario, despues 3 lejanos
 };
 
-const float angular_v = 0.5;
-const float linear_v = 1.0;
+const float angular_v=0.6;
+const float linear_v=0.3;
+
+const float near_limit=0.55;
+const float far_limit=1;
+
 
 using CallbackReturnT = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn;
 
