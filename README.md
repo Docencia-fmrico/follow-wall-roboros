@@ -10,7 +10,7 @@ Hola, este es el paquete de follow-wall del grupo Roboros de la asignatura Plani
 
 ## Respuesta al laser
 
-La base de el programa es como manejamos la informacion que nos aporta un subscriptor que hemos usado para obetener los datos del laser, dividimos todo el rango del laser en 3 zonas con 2 partes cada una, con eso ayudamos a la reactividad del robot a la hora de tomar decisiones.
+La base de el programa es como manejamos la informacion que nos aporta un subscriptor que hemos usado para obetener los datos del laser,el suscriptor va siempre a 60hz independiente de la frecuencia del laser.Dividimos todo el rango del laser en 3 zonas con 2 partes cada una, con eso ayudamos a la reactividad del robot a la hora de tomar decisiones.
 
 Las zonas graficamente se verian tal que asi. Seria una combinacion entre derecha, centro e izquierda y pueden ser la exterior o la interior.
 ![image](https://user-images.githubusercontent.com/78978241/153917108-8aef5705-0275-425d-8557-bb959f6119cf.png)
