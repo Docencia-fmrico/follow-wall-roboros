@@ -1,3 +1,4 @@
+// "Copyright [2022] <Copyright Owner>"
 // RoboRos group
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -11,9 +12,8 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
-#ifndef FOLLOW_WALL_LIFECYCLE_HPP_
-#define FOLLOW_WALL_LIFECYCLE_HPP_
+#ifndef FOLLOW_WALL_LIFECYCLE__FOLLOW_WALL_LIFECYCLE_HPP_
+#define FOLLOW_WALL_LIFECYCLE__FOLLOW_WALL_LIFECYCLE_HPP_
 
 #include <memory>
 
@@ -42,7 +42,7 @@ enum actions{
 };
 
 enum{
-  LASERPARTITION=3
+  LASERPARTITION = 3
 };
 
 enum sectors{
@@ -55,11 +55,11 @@ enum sectors{
 };
 
 struct laserscan_result{
-  int data[6];//primero los 3 sectores cercanos en sentido antihorario, despues 3 sectores lejanos antihorario
+  int data[6];  // primero los 3 sectores cercanos en sentido antihorario, despues 3 lejanos
 };
 
-const float angular_v=0.5;
-const float linear_v=1.0;
+const float angular_v = 0.5;
+const float linear_v = 1.0;
 
 using CallbackReturnT = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn;
 
@@ -89,4 +89,4 @@ public:
     enum actions decide_action(struct laserscan_result laser);
 };
 
-#endif  //FOLLOW_WALL_LIFECYCLE_HPP_
+#endif  //  FOLLOW_WALL_LIFECYCLE__FOLLOW_WALL_LIFECYCLE_HPP_
