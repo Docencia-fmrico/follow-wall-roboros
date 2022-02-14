@@ -18,36 +18,6 @@ int rad2degr(float rad){
     return rad*(180/3.1416);
 }
 
-/*
-    if laser.data[FRONT_NEAR] > d and regions['fleft'] > d and regions['fright'] > d:
-        state_description = 'case 1 - nothing'
-        change_state(0)
-    elif laser.data[FRONT_NEAR] < d and regions['fleft'] > d and regions['fright'] > d:
-        state_description = 'case 2 - front'
-        return TURN_LEFT;
-    elif laser.data[FRONT_NEAR] > d and regions['fleft'] > d and regions['fright'] < d:
-        state_description = 'case 3 - fright'
-        change_state(2)
-    elif laser.data[FRONT_NEAR] > d and regions['fleft'] < d and regions['fright'] > d:
-        state_description = 'case 4 - fleft'
-        change_state(0)
-    elif laser.data[FRONT_NEAR] < d and regions['fleft'] > d and regions['fright'] < d:
-        state_description = 'case 5 - front and fright'
-        return TURN_LEFT;
-    elif laser.data[FRONT_NEAR] < d and regions['fleft'] < d and regions['fright'] > d:
-        state_description = 'case 6 - front and fleft'
-        return TURN_LEFT;
-    elif laser.data[FRONT_NEAR] < d and regions['fleft'] < d and regions['fright'] < d:
-        state_description = 'case 7 - front and fleft and fright'
-        return TURN_LEFT;
-    elif laser.data[FRONT_NEAR] > d and regions['fleft'] < d and regions['fright'] < d:
-        state_description = 'case 8 - fleft and fright'
-        change_state(0)
-    else:
-        state_description = 'unknown case'
-        rospy.loginfo(regions)
-*/
-
 enum actions LCNcalc_dir::decide_action(struct laserscan_result laser){
     int d=5;
     
@@ -105,43 +75,6 @@ enum actions LCNcalc_dir::decide_action(struct laserscan_result laser){
     
     RCLCPP_INFO(get_logger(), "algo raro");
     return MOVING_TURN_LEFT;
-
-
-
-    /*
-    if(laser.data[FRONT_NEAR] < d && laser.data[LEFT_FAR] < d && laser.data[RIGHT_FAR] < d){
-      //'case 1 - nothing'
-    }
-    else if(laser.data[FRONT_NEAR] > d && laser.data[LEFT_FAR] < d && laser.data[RIGHT_FAR] < d){
-      //'case 2 - front'
-      return TURN_LEFT;
-    }
-    else if( laser.data[FRONT_NEAR] < d && laser.data[LEFT_FAR] < d && laser.data[RIGHT_FAR] > d){
-      //'case 3 - fright'
-      return CONTINUE;
-    }
-    else if( laser.data[FRONT_NEAR] < d && laser.data[LEFT_FAR] > d && laser.data[RIGHT_FAR] < d){
-      //'case 4 - fleft'
-      return CONTINUE;
-    }
-    else if( laser.data[FRONT_NEAR] > d && laser.data[LEFT_FAR] < d && laser.data[RIGHT_FAR] > d){
-      //'case 5 - front and fright'
-      return TURN_LEFT;
-    }
-    else if( laser.data[FRONT_NEAR] > d && laser.data[LEFT_FAR] > d && laser.data[RIGHT_FAR] < d){
-      //'case 6 - front and fleft'
-      return TURN_LEFT;
-    }
-    else if( laser.data[FRONT_NEAR] > d && laser.data[LEFT_FAR] > d && laser.data[RIGHT_FAR] > d){
-      //'case 7 - front and fleft and fright'
-      return TURN_LEFT;
-    }
-    else if( laser.data[FRONT_NEAR] < d && laser.data[LEFT_FAR] > d && laser.data[RIGHT_FAR] > d){
-      //'case 8 - fleft and fright'
-      return CONTINUE;
-    }
-    //'unknown case'
-    return STOP;
     
 
   
@@ -161,7 +94,6 @@ enum actions LCNcalc_dir::decide_action(struct laserscan_result laser){
   }
   //search wall
   return MOVING_TURN_RIGHT;
-  */
 }
 
 LCNcalc_dir::LCNcalc_dir() : rclcpp_lifecycle::LifecycleNode("follow_wall_node"){
@@ -256,10 +188,7 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
   float32[] intensities        # intensity data [device-specific units].  If your
                               # device does not provide intensities, please leave
                               # the array empty.*/
-  //RCLCPP_INFO("I heard: [%d]",msg);
   int iterations_per_size=msg->ranges.size()/LASERPARTITION;
-  //RCLCPP_INFO(get_logger(), "iterations %d", iterations_per_size);
-
 
   for(int i=0;i<LASERPARTITION;i++){
     //intial pointer
