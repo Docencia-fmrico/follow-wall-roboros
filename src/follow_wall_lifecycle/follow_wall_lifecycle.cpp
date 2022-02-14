@@ -90,7 +90,12 @@ void LCNcalc_dir::do_work()
 {
     if (twist_pub_->is_activated()) {
         struct laserscan_result laser_res;
-        laser_res.data[RIGHT_NEAR]=0; //-- Faltan resto de array para rellenar laser
+        laser_res.data[RIGHT_NEAR]=average_side_values[0][1];
+        laser_res.data[FRONT_NEAR]=average_side_values[1][1];
+        laser_res.data[LEFT_NEAR]=average_side_values[2][1];
+        laser_res.data[RIGHT_FAR]=average_side_values[0][0];
+        laser_res.data[FRONT_FAR]=average_side_values[1][0];
+        laser_res.data[LEFT_FAR]=average_side_values[2][0];
         RCLCPP_INFO(get_logger(), "Do work");
         generate_twist_msg(TURN_LEFT);
         twist_pub_->publish(generate_twist_msg(CONTINUE));
@@ -116,7 +121,6 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
                               # device does not provide intensities, please leave
                               # the array empty.*/
   //RCLCPP_INFO("I heard: [%d]",msg);
-  int areasize=(rad2degr(msg->angle_max)-rad2degr(msg->angle_min))/LASERPARTITION;
   int iterations_per_size=sizeof(msg->ranges)/sizeof(msg->ranges[0])/LASERPARTITION;
   float semicircle_half=(msg->range_max-msg->range_min)/2;
   for(int i=0;i<LASERPARTITION;i++){
