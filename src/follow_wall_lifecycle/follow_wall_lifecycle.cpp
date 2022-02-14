@@ -131,26 +131,25 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
                               # the array empty.*/
   //RCLCPP_INFO("I heard: [%d]",msg);
   int iterations_per_size=msg->ranges.size()/LASERPARTITION;
-  RCLCPP_INFO(get_logger(), "iterations %d", iterations_per_size);
+  //RCLCPP_INFO(get_logger(), "iterations %d", iterations_per_size);
 
 
-  float semicircle_half=(msg->range_max-msg->range_min)/2;
   for(int i=0;i<LASERPARTITION;i++){
     //intial pointer
     int first_zone_range=iterations_per_size*i;
-    float averageF,averageN=0.0;
+    //float averageF,averageN=0.0;
     int counterF=0;
     int counterN = 0;
     for(int a=0;a<iterations_per_size;a++){
-      RCLCPP_INFO(get_logger(), "a= %d", first_zone_range+a);
+      //RCLCPP_INFO(get_logger(), "a= %d", first_zone_range+a);
       //dsicard out of range values
       if(msg->ranges[first_zone_range+a]>=msg->range_min && msg->ranges[first_zone_range+a]<=msg->range_max){
-        if(msg->ranges[first_zone_range+a]>semicircle_half){
-          //far aside part
-          counterF++;
-        }else{
-          //near part
+        if(msg->ranges[first_zone_range+a]<near_limit){
+          //near side
           counterN++;
+        }else if(msg->ranges[first_zone_range+a]<far_limit){
+          //far side
+          counterF++;
         }
       }
       

@@ -61,6 +61,9 @@ struct laserscan_result{
 const float angular_v=0.5;
 const float linear_v=1.0;
 
+const float near_limit=0.7;
+const float far_limit=2.0;
+
 using CallbackReturnT = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn;
 
 
