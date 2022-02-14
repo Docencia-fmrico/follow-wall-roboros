@@ -35,8 +35,7 @@ enum actions
  
 El programa se basa en un único nodo lifecycle que es el que se suscribe al laser y publica la velocidad
 
-
-//continua...
+![image](https://user-images.githubusercontent.com/78978241/153957808-719a9b15-e0c1-4e42-bb4f-094b7dedd0a0.png)
 
 
 
