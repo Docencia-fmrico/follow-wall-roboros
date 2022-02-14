@@ -17,7 +17,7 @@
 
 int rad2degr(float rad)
 {
-    return rad * (180/3.1416);
+  return rad * (180 / 3.1416);
 }
 
 enum actions LCNcalc_dir::decide_action(struct laserscan_result laser)
@@ -154,7 +154,7 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
       if (msg->ranges[first_zone_range + a] >= msg->range_min &&
         msg->ranges[first_zone_range + a] <= msg->range_max)
       {
-        if (msg->ranges[first_zone_range+a] > semicircle_half){
+        if (msg->ranges[first_zone_range + a] > semicircle_half) {
           // far aside part
           counterF++;
         } else {
@@ -168,38 +168,37 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
   }
 }
 
-geometry_msgs::msg::Twist LCNcalc_dir::generate_twist_msg(enum actions action){
+geometry_msgs::msg::Twist LCNcalc_dir::generate_twist_msg(enum actions action)
+{
   geometry_msgs::msg::Twist msg;
-  switch (action)
-  {
-  case TURN_RIGHT:
-    msg.linear.x = 0;
-    msg.angular.z = angular_v;
-    break;
-  case TURN_LEFT:
-    msg.linear.x = 0;
-    msg.angular.z = -angular_v;
-    break;
-  case MOVING_TURN_RIGHT:
-    msg.linear.x = linear_v;
-    msg.angular.z = angular_v;
-    break;
-  case MOVING_TURN_LEFT:
-    msg.linear.x = linear_v;
-    msg.angular.z = -angular_v;
-    break;
-  case CONTINUE:
-    msg.linear.x = linear_v;
-    msg.angular.z = 0;
-    break;
-  case STOP:
-    msg.linear.x = 0;
-    msg.angular.z = 0;
-    break;
-  default:
-    // error
-    break;
+  switch (action) {
+    case TURN_RIGHT:
+      msg.linear.x = 0;
+      msg.angular.z = angular_v;
+      break;
+    case TURN_LEFT:
+      msg.linear.x = 0;
+      msg.angular.z = -angular_v;
+      break;
+    case MOVING_TURN_RIGHT:
+      msg.linear.x = linear_v;
+      msg.angular.z = angular_v;
+      break;
+    case MOVING_TURN_LEFT:
+      msg.linear.x = linear_v;
+      msg.angular.z = -angular_v;
+      break;
+    case CONTINUE:
+      msg.linear.x = linear_v;
+      msg.angular.z = 0;
+      break;
+    case STOP:
+      msg.linear.x = 0;
+      msg.angular.z = 0;
+      break;
+    default:
+      // error
+      break;
   }
   return msg;
 }
-

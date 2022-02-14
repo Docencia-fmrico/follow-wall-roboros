@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(follow-wall)
+project(follow_wall)
 
 set(CMAKE_CXX_STANDARD 17)
 
