@@ -40,7 +40,7 @@ enum actions decide_action(struct laserscan_result laser){
 LCNcalc_dir::LCNcalc_dir() : rclcpp_lifecycle::LifecycleNode("follow_wall_node"){
     pub_ = create_publisher<std_msgs::msg::Float64>("configured_speed", 100);
     twist_pub_ = create_publisher<geometry_msgs::msg::Twist>("/mobile_base_controller/cmd_vel_unstamped", 10);
-    lasersub_ = create_subscription<sensor_msgs/msg/LaserScan>(
+    lasersub_ = create_subscription<sensor_msgs::msg::LaserScan>(
       "scan_raw", 10, std::bind(&LCNcalc_dir::callback, this, _1));
     RCLCPP_INFO(get_logger(), "Creating LFC!!!");
 }
@@ -97,7 +97,7 @@ void LCNcalc_dir::do_work()
     }
 }
 
-void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg) const
+    void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
 {
   /*std_msgs/Header header # timestamp in the header is the acquisition time of
                            # the first ray in the scan.
@@ -115,10 +115,10 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg) con
   float32[] intensities        # intensity data [device-specific units].  If your
                               # device does not provide intensities, please leave
                               # the array empty.*/
-  RCLCPP_INFO("I heard: [%d]",msg);
-  int areasize=(rad2degr(msg.angle_max)-rad2degr(msg.angle_min))/LASERPARTITION;
-  int iterations_per_size=sizeof(msg.ranges)/sizeof(msg.ranges[0])/LASERPARTITION;
-  float semicircle_half=(msg.range_max-msg.range_min)/2;
+  RCLCPP_INFO(get_logger(), "I heard: [%d]",msg);
+  int areasize=(rad2degr(msg->angle_max)-rad2degr(msg->angle_min))/LASERPARTITION;
+  int iterations_per_size=sizeof(msg->ranges)/sizeof(msg->ranges[0])/LASERPARTITION;
+  float semicircle_half=(msg->range_max-msg->range_min)/2;
   for(int i=0;i<LASERPARTITION;i++){
     //intial pointer
     int first_zone_range=iterations_per_size*i;
@@ -127,8 +127,8 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg) con
     int counterN = 0;
     for(int a=0;a<iterations_per_size;a++){
       //dsicard out of range values
-      if(msg.ranges[first_zone_range+a]>=msg.range_min && msg.ranges[first_zone_range+a]<=msg.range_max){
-        if(msg.ranges[first_zone_range+a]>semicircle_half){
+      if(msg->ranges[first_zone_range+a]>=msg->range_min && msg->ranges[first_zone_range+a]<=msg->range_max){
+        if(msg->ranges[first_zone_range+a]>semicircle_half){
           //far aside part
           counterF++;
         }else{
@@ -137,8 +137,8 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg) con
         }
       }
     }
-    this.average_side_values[i][0]=counterF;
-    this.average_side_values[i][1]=counterN;
+    this->average_side_values[i][0]=counterF;
+    this->average_side_values[i][1]=counterN;
   }
                               
 }
