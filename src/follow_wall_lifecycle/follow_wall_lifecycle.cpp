@@ -15,11 +15,6 @@
 
 #include "follow_wall_lifecycle/follow_wall_lifecycle.hpp"
 
-int rad2degr(float rad)
-{
-  return rad * (180 / 3.1416);
-}
-
 enum actions LCNcalc_dir::decide_action(struct laserscan_result laser){
     int d = 5;
     if (laser.data[FRONT_NEAR] > d || laser.data[LEFT_NEAR] > d || laser.data[RIGHT_NEAR] > d) {
