@@ -21,17 +21,15 @@ int rad2degr(float rad)
 }
 
 enum actions LCNcalc_dir::decide_action(struct laserscan_result laser){
-    int d=5;
-    
-    if(laser.data[FRONT_NEAR] > d || laser.data[LEFT_NEAR] > d || laser.data[RIGHT_NEAR] > d){
+    int d = 5;
+    if (laser.data[FRONT_NEAR] > d || laser.data[LEFT_NEAR] > d || laser.data[RIGHT_NEAR] > d) {
       RCLCPP_INFO(get_logger(), "algo cerca-alejate");
-      
-      if(laser.data[FRONT_NEAR] > d){
+
+      if (laser.data[FRONT_NEAR] > d) {
         RCLCPP_INFO(get_logger(), "girando derecha");
         return TURN_RIGHT;
-        
       }
-      if(laser.data[LEFT_NEAR] > d){
+      if (laser.data[LEFT_NEAR] > d) {
         RCLCPP_INFO(get_logger(), "girando derecha");
         return MOVING_TURN_RIGHT;
       }
@@ -39,42 +37,59 @@ enum actions LCNcalc_dir::decide_action(struct laserscan_result laser){
       return MOVING_TURN_LEFT;
     }
 
-    if(!(laser.data[FRONT_FAR] > d) && !(laser.data[LEFT_FAR] > d) && !(laser.data[RIGHT_FAR] > d)){
+    if (!(laser.data[FRONT_FAR] > d) && !(laser.data[LEFT_FAR] > d) &&
+      !(laser.data[RIGHT_FAR] > d))
+    {
       RCLCPP_INFO(get_logger(), "nada lejos, quizas has perdido la pared gira a la izquierda");
       return MOVING_TURN_LEFT;
     }
 
-    if(!(laser.data[FRONT_FAR] > d) && (laser.data[LEFT_FAR] > d) && !(laser.data[RIGHT_FAR] > d)){
+    if (!(laser.data[FRONT_FAR] > d) && (laser.data[LEFT_FAR] > d) &&
+      !(laser.data[RIGHT_FAR] > d))
+    {
       RCLCPP_INFO(get_logger(), "solo a la izq, acercate a la pared");
       return MOVING_TURN_LEFT;
     }
-    if((laser.data[FRONT_FAR] > d) && !(laser.data[LEFT_FAR] > d) && !(laser.data[RIGHT_FAR] > d)){
+    if((laser.data[FRONT_FAR] > d) && !(laser.data[LEFT_FAR] > d) &&
+      !(laser.data[RIGHT_FAR] > d))
+    {
       RCLCPP_INFO(get_logger(), "solo de frente, avanza hacia el obstaculo");
       return CONTINUE;
     }
-    if(!(laser.data[FRONT_FAR] > d) && !(laser.data[LEFT_FAR] > d) && (laser.data[RIGHT_FAR] > d)){
+    if(!(laser.data[FRONT_FAR] > d) && !(laser.data[LEFT_FAR] > d) &&
+      (laser.data[RIGHT_FAR] > d))
+    {
       RCLCPP_INFO(get_logger(), "obstaculo a la derecha! gira para ir hacia el");
       return TURN_RIGHT;
     }
 
-    if((laser.data[FRONT_FAR] > d) && (laser.data[LEFT_FAR] > d) && !(laser.data[RIGHT_FAR] > d)){
+    if((laser.data[FRONT_FAR] > d) && (laser.data[LEFT_FAR] > d)
+      && !(laser.data[RIGHT_FAR] > d))
+    {
       RCLCPP_INFO(get_logger(), "de frente izquierda, sigue");
       return CONTINUE;
     }
-    if((laser.data[FRONT_FAR] > d) && !(laser.data[LEFT_FAR] > d) && (laser.data[RIGHT_FAR] > d)){
-      RCLCPP_INFO(get_logger(), "de frente derecha, como hemos llegado aqui? gira hasta poner obstaculo de frente");
+    if((laser.data[FRONT_FAR] > d) &&
+      !(laser.data[LEFT_FAR] > d) && (laser.data[RIGHT_FAR] > d))
+    {
+      RCLCPP_INFO(get_logger(),
+        "de frente derecha, como hemos llegado aqui? gira hasta poner obstaculo de frente");
       return TURN_RIGHT;
     }
-    if(!(laser.data[FRONT_FAR] > d) && (laser.data[LEFT_FAR] > d) && (laser.data[RIGHT_FAR] > d)){
+    if(!(laser.data[FRONT_FAR] > d) && (laser.data[LEFT_FAR] > d) &&
+      (laser.data[RIGHT_FAR] > d))
+    {
       RCLCPP_INFO(get_logger(), "a ambos lados, como??? continua pero acercate a la pared de izq");
       return MOVING_TURN_LEFT;
     }
 
-    if((laser.data[FRONT_FAR] > d) && (laser.data[LEFT_FAR] > d) && (laser.data[RIGHT_FAR] > d)){
-      RCLCPP_INFO(get_logger(), "a todos lados, gira hacia la izquierda para acercarte al obstaculo");
+    if((laser.data[FRONT_FAR] > d) && (laser.data[LEFT_FAR] > d) &&
+      (laser.data[RIGHT_FAR] > d))
+    {
+      RCLCPP_INFO(get_logger(),
+        "a todos lados, gira hacia la izquierda para acercarte al obstaculo");
       return MOVING_TURN_LEFT;
     }
-    
     RCLCPP_INFO(get_logger(), "algo raro");
     return MOVING_TURN_LEFT;
 }
@@ -140,12 +155,12 @@ void LCNcalc_dir::do_work()
 {
     if (twist_pub_->is_activated()) {
         struct laserscan_result laser_res;
-        laser_res.data[RIGHT_NEAR]=average_side_values[0][1];
-        laser_res.data[FRONT_NEAR]=average_side_values[1][1];
-        laser_res.data[LEFT_NEAR]=average_side_values[2][1];
-        laser_res.data[RIGHT_FAR]=average_side_values[0][0];
-        laser_res.data[FRONT_FAR]=average_side_values[1][0];
-        laser_res.data[LEFT_FAR]=average_side_values[2][0];
+        laser_res.data[RIGHT_NEAR] = average_side_values[0][1];
+        laser_res.data[FRONT_NEAR] = average_side_values[1][1];
+        laser_res.data[LEFT_NEAR] = average_side_values[2][1];
+        laser_res.data[RIGHT_FAR] = average_side_values[0][0];
+        laser_res.data[FRONT_FAR] = average_side_values[1][0];
+        laser_res.data[LEFT_FAR] = average_side_values[2][0];
 
 
         RCLCPP_INFO(get_logger(), "RIGHT_NEAR %d", laser_res.data[RIGHT_NEAR]);
@@ -156,10 +171,8 @@ void LCNcalc_dir::do_work()
         RCLCPP_INFO(get_logger(), "LEFT_FAR %d", laser_res.data[LEFT_FAR]);
 
         RCLCPP_INFO(get_logger(), "Do work");
-        
         twist_pub_->publish(generate_twist_msg(decide_action(laser_res)));
     }
-
 }
 
 void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
@@ -180,24 +193,26 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
   float32[] intensities        # intensity data [device-specific units].  If your
                               # device does not provide intensities, please leave
                               # the array empty.*/
-  int iterations_per_size=msg->ranges.size()/LASERPARTITION;
+  int iterations_per_size = msg->ranges.size()/LASERPARTITION;
 
-  for(int i=0;i<LASERPARTITION;i++){
-    //intial pointer
-    int first_zone_range=iterations_per_size*i;
-    //float averageF,averageN=0.0;
-    int counterF=0;
+  for(int i = 0; i < LASERPARTITION; i++) {
+    // intial pointer
+    int first_zone_range = iterations_per_size*i;
+    // float averageF,averageN=0.0;
+    int counterF = 0;
     int counterN = 0;
-    for(int a=0;a<iterations_per_size;a++){
-      //RCLCPP_INFO(get_logger(), "a= %d", first_zone_range+a);
-      //dsicard out of range values
-      if(msg->ranges[first_zone_range+a]>=msg->range_min && msg->ranges[first_zone_range+a]<=msg->range_max){
-        if(msg->ranges[first_zone_range+a]<near_limit){
-          //near side
+    for(int a = 0; a < iterations_per_size; a++){
+      // RCLCPP_INFO(get_logger(), "a= %d", first_zone_range+a);
+      // dsicard out of range values
+      if(msg->ranges[first_zone_range+a] >= msg->range_min && msg->ranges[first_zone_range+a] <=
+        msg->range_max)
+      {
+        if(msg->ranges[first_zone_range+a] < near_limit){
+          // near side
 
           counterN++;
-        }else if(msg->ranges[first_zone_range+a]<far_limit){
-          //far side
+        }else if(msg->ranges[first_zone_range+a] < far_limit){
+          // far side
           counterF++;
         }
       }
@@ -237,9 +252,8 @@ geometry_msgs::msg::Twist LCNcalc_dir::generate_twist_msg(enum actions action)
     msg.angular.z = 0;
     break;
   default:
-    //error
+    // error
     break;
-
   }
   return msg;
 }
