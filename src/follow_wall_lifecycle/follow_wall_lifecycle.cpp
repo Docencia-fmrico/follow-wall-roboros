@@ -186,14 +186,80 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
   float32[] intensities        # intensity data [device-specific units].  If your
                               # device does not provide intensities, please leave
                               # the array empty.*/
-  int iterations_per_size = msg->ranges.size()/LASERPARTITION;
+  
+  RCLCPP_INFO(get_logger(), "RANGES 0= %f", msg->ranges[0]);
+  RCLCPP_INFO(get_logger(), "RANGES min= %f", msg->angle_min);
+  RCLCPP_INFO(get_logger(), "RANGES size= %d", msg->ranges.size());
+  RCLCPP_INFO(get_logger(), "RANGES max= %f", msg->angle_max);
 
-  for(int i = 0; i < LASERPARTITION; i++) {
+
+  int iterations_per_size = msg->ranges.size();
+
+  
+  average_side_values[0][1] = 0;
+  average_side_values[1][1] = 0;
+  average_side_values[2][1] = 0;
+  average_side_values[0][0] = 0;
+  average_side_values[1][0] = 0;
+  average_side_values[2][0] = 0;
+
+
+  for(int i = 0; i < msg->ranges.size(); i++) {
     // intial pointer
     int first_zone_range = iterations_per_size*i;
     // float averageF,averageN=0.0;
     int counterF = 0;
     int counterN = 0;
+
+    if(i<60 || i>300){
+            if(msg->ranges[i] >= msg->range_min && msg->ranges[i] <=
+        msg->range_max)
+      {
+        if(msg->ranges[i] < near_limit){
+          // near side
+
+        average_side_values[1][1]++;
+        }else if(msg->ranges[i] < far_limit){
+          // far side
+        average_side_values[1][0]++;
+        }
+      }
+
+        continue;
+    }
+
+    if(i<120){
+            if(msg->ranges[i] >= msg->range_min && msg->ranges[i] <=
+        msg->range_max)
+      {
+        if(msg->ranges[i] < near_limit){
+          // near side
+
+        average_side_values[2][1]++;
+        }else if(msg->ranges[i] < far_limit){
+          // far side
+        average_side_values[2][0]++;
+        }
+      }
+
+        continue;
+    }
+    if(i>240){
+            if(msg->ranges[i] >= msg->range_min && msg->ranges[i] <=
+        msg->range_max)
+      {
+        if(msg->ranges[i] < near_limit){
+          // near side
+
+        average_side_values[0][1]++;
+        }else if(msg->ranges[i] < far_limit){
+          // far side
+        average_side_values[0][0]++;
+        }
+      }
+
+    }
+/*
     for(int a = 0; a < iterations_per_size; a++){
       // RCLCPP_INFO(get_logger(), "a= %d", first_zone_range+a);
       // dsicard out of range values
@@ -210,8 +276,10 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
         }
       }
     }
+    
     average_side_values[i][0] = counterF;
     average_side_values[i][1] = counterN;
+    */
   }
 }
 
