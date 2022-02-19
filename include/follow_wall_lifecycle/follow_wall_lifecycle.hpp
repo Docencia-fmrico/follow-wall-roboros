@@ -62,25 +62,20 @@ struct laserscan_result
   int data[6];  // primero los 3 sectores cercanos en sentido antihorario, despues 3 lejanos
 };
 
-const float angular_v = 0.4;
-const float linear_v = 0.1;
-const float near_limit = 0.5;
-const float far_limit = 0.7;
-
-
 using CallbackReturnT = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn;
-
 
 class LCNcalc_dir : public rclcpp_lifecycle::LifecycleNode
 {
-public:
-  double speed_;
-  float average_side_values[LASERPARTITION][2];
+private:
   rclcpp_lifecycle::LifecyclePublisher<std_msgs::msg::Float64>::SharedPtr pub_;
   rclcpp_lifecycle::LifecyclePublisher<geometry_msgs::msg::Twist>::SharedPtr twist_pub_;
   rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr lasersub_;
   geometry_msgs::msg::Twist generate_twist_msg(enum actions action);
-
+  float average_side_values[LASERPARTITION][2];
+  float angular_v;
+  double linear_v;
+  double near_limit;
+  double far_limit;
 public:
   LCNcalc_dir();
   CallbackReturnT on_configure(const rclcpp_lifecycle::State & state);

@@ -3,7 +3,6 @@ project(follow_wall)
 
 set(CMAKE_CXX_STANDARD 17)
 
-
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
   set(CMAKE_C_STANDARD 99)
@@ -45,24 +44,11 @@ add_executable(follow-wall
 ament_target_dependencies(follow-wall ${dependencies})
 target_link_libraries(follow-wall follow_wall_lifecycle)
 
-
-#add_executable(engine_node src/follow-wall/engine_node.cpp)
-#ament_target_dependencies(engine_node ${dependencies})
-
-#add_executable(calculate_direction src/calculate_direction.cpp)
-#ament_target_dependencies(calculate_direction ${dependencies})
-
-#add_executable(lifecycle_node src/lifecycle_node/lifecycle_node.cpp)
-#ament_target_dependencies(lifecycle_node ${dependencies})
-
-#add_executable(follow_wall_main src/follow_wall_main.cpp)
-#ament_target_dependencies(follow_wall_main ${dependencies})
-
+install(DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}
+)
 
 install(TARGETS
-  #calculate_direction
-  #engine_node
-  #lifecycle_node
   follow_wall_lifecycle
   follow-wall
 
@@ -70,6 +56,8 @@ install(TARGETS
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION lib/${PROJECT_NAME}
 )
+
+install(DIRECTORY launch config DESTINATION share/${PROJECT_NAME})
 
 # find dependencies
 find_package(ament_cmake REQUIRED)

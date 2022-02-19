@@ -100,8 +100,16 @@ LCNcalc_dir::LCNcalc_dir()
 
 CallbackReturnT LCNcalc_dir::on_configure(const rclcpp_lifecycle::State & state)
 {
+  angular_v = get_parameter("angular_v").get_value<float>();
+  linear_v = get_parameter("linear_v").get_value<float>();
+  near_limit = get_parameter("near_limit").get_value<float>();
+  far_limit = get_parameter("far_limit").get_value<float>();
+
   RCLCPP_INFO(
     get_logger(), "[%s] Configuring from [%s] state...", get_name(), state.label().c_str());
+  RCLCPP_INFO(
+    get_logger(), "Parameters, angular_v:%f linear_v:%f near_limit:%f far_limit:%f", angular_v, linear_v, near_limit, far_limit);
+
   return CallbackReturnT::SUCCESS;
 }
 
@@ -169,28 +177,10 @@ void LCNcalc_dir::do_work()
 
 void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
 {
-  /*std_msgs/Header header # timestamp in the header is the acquisition time of
-                           # the first ray in the scan.
-                           #
-                           # in frame frame_id, angles are measured around
-                           # the positive Z axis (counterclockwise, if Z is up)
-                           # with zero angle being forward along the x axis
-  float32 angle_min            # start angle of the scan [rad]
-  float32 angle_max            # end angle of the scan [rad]
-  float32 angle_increment      # angular distance between measurements [rad]
-  float32 range_min            # minimum range value [m]
-  float32 range_max            # maximum range value [m]
-  float32[] ranges             # range data [m]
-                              # (Note: values < range_min or > range_max should be discarded)
-  float32[] intensities        # intensity data [device-specific units].  If your
-                              # device does not provide intensities, please leave
-                              # the array empty.
-  */
   RCLCPP_INFO(get_logger(), "RANGES 0= %f", msg->ranges[0]);
   RCLCPP_INFO(get_logger(), "RANGES min= %f", msg->angle_min);
   RCLCPP_INFO(get_logger(), "RANGES size= %d", msg->ranges.size());
   RCLCPP_INFO(get_logger(), "RANGES max= %f", msg->angle_max);
-
 
   int iterations_per_size = msg->ranges.size();
 
@@ -209,51 +199,20 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
     int counterF = 0;
     int counterN = 0;
 
-    if (i < 60 || i > 300) {
-      if (msg->ranges[i] >= msg->range_min && msg->ranges[i] <=
-        msg->range_max)
-      {
-        if (msg->ranges[i] < near_limit) {
-          // near side
+    vector<int> arranged_laser;
+    for (int i = 0; i < msg->ranges.size(); i++){
+      if (i < 60 || i > 300){
+        arranged_laser.push_back(msg->ranges[i])
+      } 
+      // - - - Hay que hacer que se inserten donde corresponden
+      /*else if (i < 120) {
+        arranged_laser.push_back(msg->ranges[i])
+      } else if (i > 240) {
+        arranged_laser.push_back(msg->ranges[i])
+      }*/
 
-          average_side_values[1][1]++;
-        } else if (msg->ranges[i] < far_limit) {
-          // far side
-          average_side_values[1][0]++;
-        }
-      }
-
-      continue;
     }
 
-    if (i < 120) {
-      if (msg->ranges[i] >= msg->range_min && msg->ranges[i] <=
-        msg->range_max)
-      {
-        if (msg->ranges[i] < near_limit) {
-          // near side
-          average_side_values[2][1]++;
-        } else if (msg->ranges[i] < far_limit) {
-          // far side
-          average_side_values[2][0]++;
-        }
-      }
-
-      continue;
-    }
-    if (i > 240) {
-      if (msg->ranges[i] >= msg->range_min && msg->ranges[i] <=
-        msg->range_max)
-      {
-        if (msg->ranges[i] < near_limit) {
-          // near side
-          average_side_values[0][1]++;
-        } else if (msg->ranges[i] < far_limit) {
-          // far side
-          average_side_values[0][0]++;
-        }
-      }
-    }
 /*
     for(int a = 0; a < iterations_per_size; a++){
       // RCLCPP_INFO(get_logger(), "a= %d", first_zone_range+a);
@@ -279,6 +238,7 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
 
 geometry_msgs::msg::Twist LCNcalc_dir::generate_twist_msg(enum actions action)
 {
+
   geometry_msgs::msg::Twist msg;
   switch (action) {
     case TURN_RIGHT:
