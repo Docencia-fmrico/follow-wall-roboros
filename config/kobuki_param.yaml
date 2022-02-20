@@ -1,0 +1,7 @@
+follow_wall_node:
+  ros__parameters:
+    angular_v : 0.4
+    linear_v : 0.1
+    near_limit : 0.5
+    far_limit : 0.7
+    robot : "kobuki"

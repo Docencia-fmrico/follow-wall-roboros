@@ -1,5 +1,4 @@
-// "Copyright [2022] <Copyright RoboRos Group>"
-// RoboRos group
+// Copyright 2022 RoboRos
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,10 +11,12 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
 #ifndef FOLLOW_WALL_LIFECYCLE__FOLLOW_WALL_LIFECYCLE_HPP_
 #define FOLLOW_WALL_LIFECYCLE__FOLLOW_WALL_LIFECYCLE_HPP_
 
 #include <memory>
+#include <string>
 
 #include "lifecycle_msgs/msg/state.hpp"
 #include "std_msgs/msg/float64.hpp"
@@ -62,25 +63,21 @@ struct laserscan_result
   int data[6];  // primero los 3 sectores cercanos en sentido antihorario, despues 3 lejanos
 };
 
-const float angular_v=0.6;
-const float linear_v=0.3;
-
-const float near_limit=0.55;
-const float far_limit=1;
-
-
 using CallbackReturnT = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn;
-
 
 class LCNcalc_dir : public rclcpp_lifecycle::LifecycleNode
 {
-public:
-  double speed_;
-  float average_side_values[LASERPARTITION][2];
+private:
   rclcpp_lifecycle::LifecyclePublisher<std_msgs::msg::Float64>::SharedPtr pub_;
   rclcpp_lifecycle::LifecyclePublisher<geometry_msgs::msg::Twist>::SharedPtr twist_pub_;
   rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr lasersub_;
   geometry_msgs::msg::Twist generate_twist_msg(enum actions action);
+  float average_side_values[LASERPARTITION][2];
+  float angular_v;
+  float linear_v;
+  float near_limit;
+  float far_limit;
+  std::string robot;
 
 public:
   LCNcalc_dir();
