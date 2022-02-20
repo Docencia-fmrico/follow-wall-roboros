@@ -4,4 +4,4 @@ follow_wall_node:
     linear_v : 0.1
     near_limit : 0.5
     far_limit : 0.7
-    try : "s"
+    robot : "kobuki"

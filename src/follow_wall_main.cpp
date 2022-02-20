@@ -23,6 +23,7 @@ int main(int argc, char * argv[])
   node->declare_parameter("linear_v", 0.05);
   node->declare_parameter("near_limit", 0.5);
   node->declare_parameter("far_limit", 0.7);
+  node->declare_parameter("robot", "kobuki");
 
   rclcpp::Rate rate(5);
   while (rclcpp::ok()) {

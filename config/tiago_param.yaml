@@ -1,0 +1,7 @@
+follow_wall_node:
+  ros__parameters:
+    angular_v : 0.6
+    linear_v : 0.3
+    near_limit : 0.55
+    far_limit : 1.0
+    robot: "tiago"

@@ -16,6 +16,7 @@
 #define FOLLOW_WALL_LIFECYCLE__FOLLOW_WALL_LIFECYCLE_HPP_
 
 #include <memory>
+#include <string>
 
 #include "lifecycle_msgs/msg/state.hpp"
 #include "std_msgs/msg/float64.hpp"
@@ -73,9 +74,11 @@ private:
   geometry_msgs::msg::Twist generate_twist_msg(enum actions action);
   float average_side_values[LASERPARTITION][2];
   float angular_v;
-  double linear_v;
-  double near_limit;
-  double far_limit;
+  float linear_v;
+  float near_limit;
+  float far_limit;
+  std::string robot;
+
 public:
   LCNcalc_dir();
   CallbackReturnT on_configure(const rclcpp_lifecycle::State & state);

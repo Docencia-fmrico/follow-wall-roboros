@@ -11,7 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-
+#include <string>
 #include "follow_wall_lifecycle/follow_wall_lifecycle.hpp"
 
 enum actions LCNcalc_dir::decide_action(struct laserscan_result laser)
@@ -104,11 +104,13 @@ CallbackReturnT LCNcalc_dir::on_configure(const rclcpp_lifecycle::State & state)
   linear_v = get_parameter("linear_v").get_value<float>();
   near_limit = get_parameter("near_limit").get_value<float>();
   far_limit = get_parameter("far_limit").get_value<float>();
+  robot = get_parameter("robot").get_value<std::string>();
 
   RCLCPP_INFO(
     get_logger(), "[%s] Configuring from [%s] state...", get_name(), state.label().c_str());
   RCLCPP_INFO(
-    get_logger(), "Parameters, angular_v:%f linear_v:%f near_limit:%f far_limit:%f", angular_v, linear_v, near_limit, far_limit);
+    get_logger(), "Parameters, angular_v:%f linear_v:%f near_limit:%f far_limit:%f",
+    angular_v, linear_v, near_limit, far_limit);
 
   return CallbackReturnT::SUCCESS;
 }
@@ -191,54 +193,78 @@ void LCNcalc_dir::callback(const sensor_msgs::msg::LaserScan::SharedPtr msg)
   average_side_values[1][0] = 0;
   average_side_values[2][0] = 0;
 
-
-  for (int i = 0; i < msg->ranges.size(); i++) {
-    // intial pointer
-    int first_zone_range = iterations_per_size * i;
-    // float averageF,averageN=0.0;
-    int counterF = 0;
-    int counterN = 0;
-
-    vector<int> arranged_laser;
-    for (int i = 0; i < msg->ranges.size(); i++){
-      if (i < 60 || i > 300){
-        arranged_laser.push_back(msg->ranges[i])
-      } 
-      // - - - Hay que hacer que se inserten donde corresponden
-      /*else if (i < 120) {
-        arranged_laser.push_back(msg->ranges[i])
-      } else if (i > 240) {
-        arranged_laser.push_back(msg->ranges[i])
-      }*/
-
+  if (robot.compare("tiago")) {
+    for (int i = 0; i < LASERPARTITION; i++) {
+      // intial pointer
+      int first_zone_range = iterations_per_size * i;
+      int counterF = 0;
+      int counterN = 0;
+      for (int a = 0; a < iterations_per_size; a++) {
+        // dsicard out of range values
+        if (msg->ranges[first_zone_range + a] >= msg->range_min &&
+          msg->ranges[first_zone_range + a] <= msg->range_max)
+        {
+          if (msg->ranges[first_zone_range + a] < near_limit) {
+            // near side
+            counterN++;
+          } else if (msg->ranges[first_zone_range + a] < far_limit) {
+            // far side
+            counterF++;
+          }
+        }
+      }
+      average_side_values[i][0] = counterF;
+      average_side_values[i][1] = counterN;
     }
-
-/*
-    for(int a = 0; a < iterations_per_size; a++){
-      // RCLCPP_INFO(get_logger(), "a= %d", first_zone_range+a);
-      // dsicard out of range values
-      if(msg->ranges[first_zone_range+a] >= msg->range_min && msg->ranges[first_zone_range+a] <=
-        msg->range_max)
-      {
-        if(msg->ranges[first_zone_range+a] < near_limit){
-          // near side
-
-          counterN++;
-        }else if(msg->ranges[first_zone_range+a] < far_limit){
-          // far side
-          counterF++;
+  } else {
+    for (int i = 0; i < static_cast<int> msg->ranges.size(); i++) {
+      if (i < 60 || i > 300) {
+        if (msg->ranges[i] >= msg->range_min && msg->ranges[i] <=
+          msg->range_max)
+        {
+          if (msg->ranges[i] < near_limit) {
+            // near side
+            average_side_values[1][1]++;
+          } else if (msg->ranges[i] < far_limit) {
+            // far side
+            average_side_values[1][0]++;
+          }
+        }
+        continue;
+      }
+      if (i < 120) {
+        if (msg->ranges[i] >= msg->range_min && msg->ranges[i] <=
+          msg->range_max)
+        {
+          if (msg->ranges[i] < near_limit) {
+            // near side
+            average_side_values[2][1]++;
+          } else if (msg->ranges[i] < far_limit) {
+            // far side
+            average_side_values[2][0]++;
+          }
+        }
+        continue;
+      }
+      if (i > 240) {
+        if (msg->ranges[i] >= msg->range_min && msg->ranges[i] <=
+          msg->range_max)
+        {
+          if (msg->ranges[i] < near_limit) {
+            // near side
+            average_side_values[0][1]++;
+          } else if (msg->ranges[i] < far_limit) {
+            // far side
+            average_side_values[0][0]++;
+          }
         }
       }
     }
-    average_side_values[i][0] = counterF;
-    average_side_values[i][1] = counterN;
-    */
   }
 }
 
 geometry_msgs::msg::Twist LCNcalc_dir::generate_twist_msg(enum actions action)
 {
-
   geometry_msgs::msg::Twist msg;
   switch (action) {
     case TURN_RIGHT:
