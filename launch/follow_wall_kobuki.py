@@ -42,6 +42,10 @@ def generate_launch_description():
         executable='follow-wall',
         output='screen',
         parameters=[config_file,],
+        remappings = [
+            ('/mobile_base_controller/cmd_vel_unstamped','/commands/velocity'),
+            ('/scan_raw','/scan_filtered'),
+            ]
         )
     ld = LaunchDescription()
     #ld.add_action(tiago_sim_cmd)
