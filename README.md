@@ -41,3 +41,11 @@ El programa se basa en un único nodo lifecycle que es el que se suscribe al las
 
 
 [Video](https://urjc-my.sharepoint.com/:v:/g/personal/a_cabreram_2019_alumnos_urjc_es/EY-knV94el1OmfO9Hn5FxBgB7fKtD-otc88CP5NSCffH_w?e=fomcNP)
+
+
+#2. Añadiendo soporte a kobuki en real  
+
+Añadimos parametros para ajustar facilmente diferentes robots.
+Añadimos dos launcher, uno con simulador y los parametros de tiago, y otro con los parametros del kobuki y su remapping.
+
+
